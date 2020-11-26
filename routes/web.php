@@ -17,3 +17,4 @@ Route::get('/', ['as' => 'frontend.home.index', 'uses' => 'IndexController@index
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('panel/signout', ['as' => 'signout', 'uses' => 'Auth\LoginController@signout']);

@@ -57,7 +57,7 @@
 
             <!-- News -->
             <div class="news">
-                @include('frontend.news')
+                @include('layouts.berita')
             </div>
             <!-- Akhir -->
         </div>
