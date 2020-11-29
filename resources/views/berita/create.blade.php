@@ -3,25 +3,25 @@
 <section class="section">
 
     <div class="section-header">
-        <h1>Kategori <small>Tambah Data</small></h1>
+        <h1>Berita <small>Tambah Data</small></h1>
     </div>
 
     <div class="section-body">
         <div class="col-12 col-md-6 col-lg-6">
             <div class="card">
                 <div class="card-header">
-                    <a href="{{ route('kategori.index') }}">
+                    <a href="{{ route('berita.index') }}">
                         <button type="button" class="btn btn-outline-info">
                             <i class="fas fa-arrow-circle-left"></i> Back
                         </button>
                     </a>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('kategori.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('berita.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label>Judul</label>
-                            <input type="text" name="nama_kategori" class="form-control">
+                            <input type="text" name="judul" class="form-control">
                             <label>Kategori Berita</label>
                             <select required name="kategori" class="form-control" data-live-search="true">
                                 @foreach($data['kategori'] as $kategori)

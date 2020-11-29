@@ -12,9 +12,19 @@
 */
 
 Route::get('/', ['as' => 'frontend.home.index', 'uses' => 'IndexController@index']);
+Route::get('registrasi/index', ['as' => 'frontend.registrasi.index', 'uses' => 'RegistrasiController@index']);
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('panel/signout', ['as' => 'signout', 'uses' => 'Auth\LoginController@signout']);
+
+
+//Route Menu manejemen berita
+Route::get('panel/berita', ['as' => 'berita.index', 'uses' => 'BeritaController@index']);
+Route::get('panel/berita/create', ['as' => 'berita.create', 'uses' => 'BeritaController@create']);
+Route::post('panel/berita/create', ['as' => 'berita.store', 'uses' => 'BeritaController@store']);
+Route::get('panel/berita/edit/{id}', ['as' => 'berita.edit', 'uses' => 'BeritaController@edit']);
+Route::put('panel/berita/edit/{id}', ['as' => 'berita.update', 'uses' => 'BeritaController@update']);
+Route::get('panel/berita/delete/{id}', ['as' => 'berita.delete', 'uses' => 'BeritaController@delete']);

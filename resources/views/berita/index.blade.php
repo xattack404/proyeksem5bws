@@ -18,12 +18,12 @@
                             <button type="submit" class="btn btn-primary">Search</button>
                         </div>
                     </form>
-                    <a href="{{ route('cabangolahraga.index') }}" class="pull-right">
+                    <a href="{{ route('berita.index') }}" class="pull-right">
                         <button type="button" class="btn btn-info">All Data</button>
                     </a>
                 </div>
                 <div class="card-header">
-                    <a href="{{ route('cabangolahraga.create') }}">
+                    <a href="{{ route('berita.create') }}">
                         <button type="button" class="btn btn-primary">Tambah Data</button>
                     </a>
                 </div>

@@ -14,7 +14,8 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        //
+        $data = Berita::paginate(10);
+        return view('berita.index', compact('data'));
     }
 
     /**
@@ -24,7 +25,8 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        //
+        // $data['kategori'] = Kategori::all();
+        return view('berita.create');
     }
 
     /**
@@ -35,7 +37,17 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $fileName = 'berita-' . date('Ymdhis') . '.' . $request->foto->getClientOriginalExtension();
+        $request->foto->move('foto/', $fileName);
+
+        Berita::create([
+            'judul' => $request->judul,
+            'seo_berita' => strtolower(str_replace(" ", "-", $request->judul)),
+            'isi' => $request->isi,
+            'foto' =>  $fileName,
+            'kategori' => $request->kategori
+        ]);
+        return redirect()->route('cabangolahraga.index');
     }
 
     /**
@@ -55,9 +67,11 @@ class BeritaController extends Controller
      * @param  \App\Berita  $berita
      * @return \Illuminate\Http\Response
      */
-    public function edit(Berita $berita)
+    public function edit(Berita $id)
     {
-        //
+        // $data['kategori'] = Kategori::all();
+        $data['berita'] = Berita::find($id);
+        return view('berita.edit', compact('data'));
     }
 
     /**
@@ -67,9 +81,18 @@ class BeritaController extends Controller
      * @param  \App\Berita  $berita
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Berita $berita)
+    public function update(Request $request, Berita $id)
     {
-        //
+        $fileName = 'lomba-' . date('Ymdhis') . '.' . $request->foto->getClientOriginalExtension();
+        $request->foto->move('image/', $fileName);
+        Berita::whereId($id)->update([
+            'judul' => $request->judul,
+            'seo_berita' => strtolower(str_replace(" ", "-", $request->judul)),
+            'isi' => $request->isi,
+            'foto' =>  $fileName,
+            'kategori' => $request->kategori
+        ]);
+        return redirect()->route('cabangolahraga.index');
     }
 
     /**
@@ -78,8 +101,14 @@ class BeritaController extends Controller
      * @param  \App\Berita  $berita
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Berita $berita)
+    public function destroy(Berita $id)
     {
-        //
+        $data = Berita::find($id);
+        if (\File::exists(public_path('image/' . $data->foto))) {
+
+            \File::delete(public_path('image/' . $data->foto));
+        }
+        Berita::whereId($id)->delete();
+        return redirect()->route('cabangolahraga.index');
     }
 }

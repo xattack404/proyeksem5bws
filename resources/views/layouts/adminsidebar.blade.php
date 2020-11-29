@@ -22,6 +22,9 @@
       <li class="">
         <a class="nav-link" href="#"><i class="fas fa-chevron-circle-right"></i> <span>Kategori</span></a>
       </li>
+      <li class="">
+        <a class="nav-link" href="{{ route('berita.index') }}"><i class="fas fa-newspaper"></i> <span>Berita</span></a>
+      </li>
 
       </li>
     </ul>
