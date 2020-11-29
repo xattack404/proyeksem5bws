@@ -28,3 +28,11 @@ Route::post('panel/berita/create', ['as' => 'berita.store', 'uses' => 'BeritaCon
 Route::get('panel/berita/edit/{id}', ['as' => 'berita.edit', 'uses' => 'BeritaController@edit']);
 Route::put('panel/berita/edit/{id}', ['as' => 'berita.update', 'uses' => 'BeritaController@update']);
 Route::get('panel/berita/delete/{id}', ['as' => 'berita.delete', 'uses' => 'BeritaController@delete']);
+
+//Route Menu Kategori
+Route::get('panel/kategori', ['as' => 'kategori.index', 'uses' => 'KategoriController@index']);
+Route::get('panel/kategori/create', ['as' => 'kategori.create', 'uses' => 'KategoriController@create']);
+Route::post('panel/kategori/create', ['as' => 'kategori.store', 'uses' => 'KategoriController@store']);
+Route::get('panel/kategori/edit/{id}', ['as' => 'kategori.edit', 'uses' => 'KategoriController@edit']);
+Route::put('panel/kategori/edit/{id}', ['as' => 'kategori.update', 'uses' => 'KategoriController@update']);
+Route::get('panel/kategori/delete/{id}', ['as' => 'kategori.delete', 'uses' => 'KategoriController@delete']);

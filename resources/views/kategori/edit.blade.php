@@ -26,8 +26,6 @@
               <div class="form-group">
                 <label>Nama Kategori</label>
                 <input type="text" name="nama_kategori" class="form-control" value="{{ $data->nama_kategori }}">
-                <label>Harga</label>
-                <input type="text" name="harga" class="form-control" value="{{ $data->harga }}">
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary">SAVE</button>

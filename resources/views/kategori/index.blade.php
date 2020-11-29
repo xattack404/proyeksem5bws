@@ -32,7 +32,6 @@
             <thead>
               <tr>
                 <th scope="col">Nama Kategori</th>
-                <th scope="col">Harga</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -40,7 +39,6 @@
               @forelse($data as $kategori)
               <tr>
                 <td>{{ $kategori->nama_kategori }}</td>
-                <td>Rp.{{ number_format($kategori->harga,0, ',' , '.') }}</td>
                 <td>
                   <a href="{{ route('kategori.edit', ['id' => $kategori->id]) }}">
                     <button type="button" class="btn btn-sm btn-info">Edit</button>

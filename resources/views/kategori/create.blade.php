@@ -22,8 +22,6 @@
               <div class="form-group">
                 <label>Name Kategori</label>
                 <input type="text" name="nama_kategori" class="form-control">
-                <label>Harga</label>
-                <input type="number" name="harga" class="form-control">
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary">SAVE</button>
