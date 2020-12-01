@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Berita;
+use App\Kategori;
 use Illuminate\Http\Request;
 
 class BeritaController extends Controller
@@ -25,8 +26,8 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        // $data['kategori'] = Kategori::all();
-        return view('berita.create');
+        $data['kategori'] = Kategori::all();
+        return view('berita.create', compact('data'));
     }
 
     /**
@@ -44,10 +45,10 @@ class BeritaController extends Controller
             'judul' => $request->judul,
             'seo_berita' => strtolower(str_replace(" ", "-", $request->judul)),
             'isi' => $request->isi,
-            'foto' =>  $fileName,
+            'gambar' =>  $fileName,
             'kategori' => $request->kategori
         ]);
-        return redirect()->route('cabangolahraga.index');
+        return redirect()->route('berita.index');
     }
 
     /**
@@ -69,7 +70,7 @@ class BeritaController extends Controller
      */
     public function edit(Berita $id)
     {
-        // $data['kategori'] = Kategori::all();
+        $data['kategori'] = Kategori::all();
         $data['berita'] = Berita::find($id);
         return view('berita.edit', compact('data'));
     }

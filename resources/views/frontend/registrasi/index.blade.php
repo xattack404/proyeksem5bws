@@ -1,6 +1,7 @@
 @include('layouts.FrontendNavbar')
 <!-- Navbar End -->
-<form action="" class="registrasi">
+<form action="{{ route('frontend.registrasi.store') }}" class="registrasi" id="registrasi" method="POST" enctype="multipart/form-data">
+    @csrf
     <div class="form-box">
         <div class="form-kategori">
             <div class="judulkategori">
@@ -8,39 +9,39 @@
             </div>
             <div class="form-group">
                 <label for="nama">Nama Lengkap</label>
-                <input id="nama" type="text" placeholder="Isi Data">
+                <input id="nama" name="nama" required type="text" placeholder="Isi Data">
             </div>
             <div class="form-group">
                 <label for="nisn">NISN</label>
-                <input id="nisn" type="text" placeholder="Isi Data">
-            </div>
-            <div class="form-group">
-                <label for="nik">Nomer Identitas(NIK)</label>
-                <input id="nik" type="text" placeholder="Isi Data">
+                <input id="nisn" name="nisn" required type="text" placeholder="Isi Data">
             </div>
             <div class="form-group">
                 <label for="tempat">Tempat Lahir</label>
-                <input id="tempat" type="text" placeholder="Isi Data">
+                <input id="tempat_lahir" name="tempat_lahir" required type="text" placeholder="Isi Data">
             </div>
             <div class="form-group">
                 <label for="tanggal">Tanggal Lahir</label>
-                <input id="tanggal" type="date" placeholder="Isi Data">
+                <input id="tanggal" name="tgl_lahir" required type="date" placeholder="Isi Data">
             </div>
             <div class="form-group">
                 <label for="kelamin">Jenis Kelamin</label>
-                <select name="" id="kelamin">
+                <select name="jenis_kelamin" id="kelamin" required>
                     <option value="">--Tentukan Pilihan--</option>
-                    <option value="">Laki-Laki</option>
-                    <option value="">Perempuan</option>
+                    <option value="Laki-Laki">Laki-Laki</option>
+                    <option value="Perempuan">Perempuan</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="telepon">Nomor Telepon</label>
-                <input id="telepon" type="tel" placeholder="Isi Data">
+                <input id="telepon" name="no_telp" required type="number" placeholder="Isi Data">
+            </div>
+            <div class="form-group">
+                <label for="telepon">Email</label>
+                <input id="email" name="email" type="text" placeholder="Isi jika ada">
             </div>
             <div class="form-group">
                 <label for="fotopribadi">Upload Foto Pribadi</label>
-                <input id="fotopribadi" type="file" placeholder="Isi Data">
+                <input id="fotopribadi" name="foto" required type="file" placeholder="Isi Data">
                 *ukuran foto 3 x 4, ukuran file maksimal 3MB
             </div>
         </div>
@@ -50,27 +51,23 @@
             </div>
             <div class="form-group">
                 <label for="provinsi">Provinsi</label>
-                <input id="provinsi" type="text" placeholder="Isi Data">
+                <input id="provinsi" name="prov" required type="text" placeholder="Isi Data">
             </div>
             <div class="form-group">
                 <label for="kota">Kota/Kabupaten</label>
-                <input id="kota" type="text" placeholder="Isi Data">
+                <input id="kota" type="text" name="kabkot" required placeholder="Isi Data">
             </div>
             <div class="form-group">
                 <label for="kecamatan">Kecamatan</label>
-                <input id="kecamatan" type="text" placeholder="Isi Data">
+                <input id="kecamatan" type="text" name="kec" required placeholder="Isi Data">
             </div>
             <div class="form-group">
-                <label for="desa">Desa/Kelurahan</label>
-                <input id="desa" type="text" placeholder="Isi Data">
+                <label for="desa">Alamat</label>
+                <input id="desa" name="alamat" required type="text" placeholder="Isi Data">
             </div>
             <div class="form-group">
                 <label for="kodepos">Kode Pos</label>
-                <input id="kodepos" type="text" placeholder="Isi Data">
-            </div>
-            <div class="form-group">
-                <label for="alamat">Alamat Rumah</label>
-                <input id="alamat" type="text" placeholder="Isi Data">
+                <input id="kodepos" name="kode_pos" required type="number" placeholder="Isi Data">
             </div>
         </div>
     </div>
@@ -82,38 +79,26 @@
                 <h1>Data Sekolah Sebelum</h1>
             </div>
             <div class="form-group">
-                <label for="jenispend">Jenis Pendidikan</label>
-                <select name="" id="jenispend">
+                <label for="jenjangpend">Pendidikan Terakhir</label>
+                <select name="pend_ter" id="jenjangpend">
                     <option value="">--Tentukan Pilihan--</option>
-                    <option value="">Pendidikan Diniyah Formal</option>
-                    <option value="">Satuan Muadalah</option>
-                    <option value="">PPS Wajar Dikdas</option>
-                    <option value="">Pendidika kesetaraan (paket)</option>
-                    <option value="">Sekolah Umum</option>
-                    <option value="">Madrasah</option>
+                    <option value="Tidak Sekolah">Tidak Sekolah</option>
+                    <option value="SD">SD</option>
+                    <option value="SMP/MTs">SMP/MTs</option>
+                    <option value="SMA/SMK/MA">SMA/SMK/MA</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="jenjangpend">Jenjang Pendidikan</label>
-                <select name="" id="jenjangpend">
-                    <option value="">--Tentukan Pilihan--</option>
-                    <option value="">MI/SD/ULA</option>
-                    <option value="">MTs?SMP/WUSTHA</option>
-                    <option value="">MA/SMA/ULYA</option>
-                    <option value="">MAK/SMK</option>
-                    <option value="">PTKI</option>
-                    <option value="">MA'AHAD ALY</option>
-                    <option value="">PT. UMUM</option>
-                    <option value="">Belum Ada</option>
-                </select>
+                <label for="lulus">Asal Sekolah</label>
+                <input id="lulus" name="asal_sekolah" type="text" placeholder="Isi Data">
             </div>
             <div class="form-group">
                 <label for="lulus">Tahun lulus</label>
-                <input id="lulus" type="tel" placeholder="Isi Data">
+                <input id="lulus" name="thn_lulus" type="number" placeholder="Isi Data">
             </div>
             <div class="form-group">
                 <label for="ijazah">Scan Ijazah</label>
-                <input id="ijazah" type="file" placeholder="Isi Data">
+                <input id="ijazah" name="scan_ijazah" type="file" placeholder="Isi Data">
                 *ukuran file maksimal 3MB
             </div>
         </div>
@@ -123,15 +108,15 @@
             </div>
             <div class="form-group">
                 <label for="kartukeluarga">Nomor Kartu Keluarga</label>
-                <input id="kartukeluarga" type="tel" placeholder="Isi Data">
+                <input id="kartukeluarga" name="no_kk" required type="tel" placeholder="Isi Data">
             </div>
             <div class="form-group">
                 <label for="kepala">Nomor Kepala Keluarga</label>
-                <input id="kepala" type="text" placeholder="Isi Data">
+                <input id="kepala" name="nkk" required type="text" placeholder="Isi Data">
             </div>
             <div class="form-group">
                 <label for="scankartu">Scan Kartu Keluarga</label>
-                <input id="scankartu" type="file" placeholder="Isi Data">
+                <input id="scankartu" name="scan_kk" required type="file" placeholder="Isi Data">
                 *ukuran file maksimal 3MB
             </div>
         </div>
@@ -141,27 +126,27 @@
             </div>
             <div class="form-group">
                 <label for="namaayah">Nama Lengkap</label>
-                <input id="namaayah" type="text" placeholder="Isi Data">
+                <input id="namaayah" name="nama_ayah" required type="text" placeholder="Isi Data">
             </div>
             <div class="form-group">
                 <label for="statushidupayah">Status Hidup</label>
-                <select name="" id="statushidupayah">
+                <select id="statushidupayah" name="status_ayah" required>
                     <option value="">--Tentukan Pilihan--</option>
-                    <option value="">Hidup</option>
-                    <option value="">Meninggal</option>
-                    <option value="">Tidak diketahui</option>
+                    <option value="Masih Hidup">Masih Hidup</option>
+                    <option value="Meninggal">Meninggal</option>
+                    <option value="Tidak Diketahui">Tidak diketahui</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="pekerjaanayah">Pekerjaan</label>
-                <select name="" id="pekerjaanayah">
+                <select name="pekerjaan_ayah" required id="pekerjaanayah">
                     <option value="">--Tentukan Pilihan--</option>
-                    <option value="">Wiraswasta</option>
-                    <option value="">Pedagang</option>
-                    <option value="">Karyawan Swasta</option>
-                    <option value="">PNS</option>
-                    <option value="">Pelajar</option>
-                    <option value="">Todak memiliki pekerjaan tetap</option>
+                    <option value="Wiraswasta">Wiraswasta</option>
+                    <option value="Pedagang">Pedagang</option>
+                    <option value="Karyawan Swasta">Karyawan Swasta</option>
+                    <option value="PNS">PNS</option>
+                    <option value="Pelajar">Pelajar</option>
+                    <option value="Tidak memiliki pekerjaan tetap">Tidak memiliki pekerjaan</option>
                 </select>
             </div>
         </div>
@@ -171,44 +156,39 @@
             </div>
             <div class="form-group">
                 <label for="namaibu">Nama Lengkap</label>
-                <input id="namaibu" type="text" placeholder="Isi Data">
+                <input id="namaibu" name="nama_ibu" required type="text" placeholder="Isi Data">
             </div>
             <div class="form-group">
                 <label for="statushidupibu">Status Hidup</label>
-                <select name="" id="statushidupibu">
+                <select id="statushidupibu" name="status_ibu" required>
                     <option value="">--Tentukan Pilihan--</option>
-                    <option value="">Hidup</option>
-                    <option value="">Meninggal</option>
-                    <option value="">Tidak diketahui</option>
+                    <option value="Masih Hidup">Masih Hidup</option>
+                    <option value="Meninggal">Meninggal</option>
+                    <option value="Tidak Diketahui">Tidak diketahui</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="pekerjaanibu">Pekerjaan</label>
-                <select name="" id="pekerjaanibu">
+                <select name="pekerjaan_ibu" id="pekerjaanibu">
                     <option value="">--Tentukan Pilihan--</option>
-                    <option value="">Wiraswasta</option>
-                    <option value="">Pedagang</option>
-                    <option value="">Karyawan Swasta</option>
-                    <option value="">PNS</option>
-                    <option value="">Pelajar</option>
-                    <option value="">Todak memiliki pekerjaan tetap</option>
+                    <option value="Wiraswasta">Wiraswasta</option>
+                    <option value="Pedagang">Pedagang</option>
+                    <option value="Karyawan Swasta">Karyawan Swasta</option>
+                    <option value="PNS">PNS</option>
+                    <option value="Pelajar">Pelajar</option>
+                    <option value="Ibu Rumah Tangga">Ibu Rumah Tangga</option>
+                    <option value="Tidak memiliki pekerjaan tetap">Tidak memiliki pekerjaan</option>
                 </select>
             </div>
             <div class="form-group">
                 <!-- <button type="submit" class="button green">Kirim</button> -->
-                <a href="#popup" class="button green">KIRIM</a>
+                <button type="submit" class="button green">SAVE</button>
                 <a href="datapendaftaran.php" class="button blue">Cek Data Pendaftaran</a>
             </div>
         </div>
     </div>
 </form>
-<form action="" id="popup">
-    <div class="popup-bg">
-        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-        <h1>Data dan Berkas Terkirim <br> Cek Email Anda</h1>
-        <a href="#" class="btn-popup red">Tutup</a>
-    </div>
-</form>
+
 </body>
 
 </html>

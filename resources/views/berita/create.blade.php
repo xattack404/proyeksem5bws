@@ -24,6 +24,7 @@
                             <input type="text" name="judul" class="form-control">
                             <label>Kategori Berita</label>
                             <select required name="kategori" class="form-control" data-live-search="true">
+                                <option value="">--Pilih Kategori-- </option>
                                 @foreach($data['kategori'] as $kategori)
                                 <option value="{{ $kategori->id }}">{{ $kategori->nama_kategori }} </option>
                                 @endforeach

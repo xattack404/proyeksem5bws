@@ -13,6 +13,7 @@
 
 Route::get('/', ['as' => 'frontend.home.index', 'uses' => 'IndexController@index']);
 Route::get('registrasi/index', ['as' => 'frontend.registrasi.index', 'uses' => 'RegistrasiController@index']);
+Route::post('registrasi/simpan', ['as' => 'frontend.registrasi.store', 'uses' => 'RegistrasiController@store']);
 
 
 Auth::routes();

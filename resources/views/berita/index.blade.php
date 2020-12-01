@@ -41,7 +41,7 @@
                             @forelse($data as $berita)
                             <tr>
                                 <td>{{ $berita->judul }}</td>
-                                <td><img src="{{ asset('image/'. $berita->foto) }}" width='75' height='75'></td>
+                                <td><img src="{{ asset('foto/'. $berita->gambar) }}" width='75' height='75'></td>
                                 <td>{{ $berita->kategori }}</td>
                                 <td>
                                     <a href="{{ route('berita.edit', ['id' => $berita->id]) }}">
