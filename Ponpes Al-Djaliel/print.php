@@ -8,19 +8,18 @@
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
 </head>
-<body class="">
-<!-- Navbar -->
-    <?php include 'navbar.php';?>
+<body class="body-print">
 <!-- Navbar End -->
             <form class="print-area" id="printableArea">
                 <div class="judul">
                     <h1>bukti daftar ulang santri baru <br> pondok pesantren al-djaliel</h1>
                     <img src="IMG/Logo.png" alt="">
-                </div>
+                </div> <br> <br> <br>
                 <div class="konten">
                     <div class="form-bio">
+                        <p><span>Nomor Pendaftaran</span> <span>:</span><span>191192001101910</span></p>
                         <p><span>Nama</span> <span>:</span><span>Tahajjudin Fajri</span></p>
-                        <p><span>Nomor Pendaftaran</span> <span>:</span><span>191192001101910</span></p>                        
+                        <p><span>NIK</span> <span>:</span><span>6748849411</span></p>                        
                         <p><span>Jenis Kelamin</span> <span>:</span><span>Laki-Laki</span></p>
                         <p><span>Jenjang Pendidikan Terakhir</span> <span>:</span><span>MA/SMA/ULYA</span></p>
                         <p><span>Tahun Lulus</span> <span>:</span><span>2020</span></p>
