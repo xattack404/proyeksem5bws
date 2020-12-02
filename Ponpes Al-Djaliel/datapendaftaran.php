@@ -36,6 +36,29 @@
             <h1>
                 Selamat Data dan Berkas Anda Diterima
             </h1>
+            <div class="registrasi inputan">
+                <div class="form-box">
+                    <div class="form-group">
+                            <label for="invoice">Nomer Pendaftaran</label>
+                            <input id="invoice" type="text" placeholder="Isi Data">
+                    </div>
+                    <div class="form-group">
+                            <label for="nama">Nama Lengkap</label>
+                            <input id="nama" type="text" placeholder="Isi Data">
+                    </div>
+                </div>
+                <div class="form-box">
+                    <div class="form-group">
+                        <label for="kelamin">Jenis Kelamin</label>
+                        <select name="" id="kelamin">
+                            <option value="">--Tentukan Pilihan--</option>
+                            <option value="">Laki-Laki</option>
+                            <option value="">Perempuan</option>
+                        </select>
+                    </div>  
+
+                </div>
+            </div>
             <p>
                 Alhamdulillah anda diterima di Pondok Pesantren Syariah Al Djaliel. Tahap selanjutnya adalah melakukan pembayaran Kitab dan seragam untuk keperluan santri. Kitab dan seragam tersebut sebagai barang yang digunakan dalam kegiatan sehari-hari Pondok Pesantren Syariah Al Djaliel.
             </p>
@@ -89,22 +112,7 @@
             </table>
             <div class="registrasi inputan">
                 <div class="form-box">                
-                        <div class="form-group">
-                            <label for="invoice">Nomer Pendaftaran</label>
-                            <input id="invoice" type="text" placeholder="Isi Data">
-                        </div>
-                        <div class="form-group">
-                            <label for="nama">Nama Lengkap</label>
-                            <input id="nama" type="text" placeholder="Isi Data">
-                        </div>
-                        <div class="form-group">
-                            <label for="kelamin">Jenis Kelamin</label>
-                            <select name="" id="kelamin">
-                                <option value="">--Tentukan Pilihan--</option>
-                                <option value="">Laki-Laki</option>
-                                <option value="">Perempuan</option>
-                            </select>
-                        </div> 
+                        
                 </div>
                 <div class="form-box">
                         <div class="form-group">
