@@ -1432,12 +1432,10 @@ transform: scale(1.05);
 .popup-bg2 table{
     text-align: left;
     border: 1px solid black;
-    margin: auto;
     margin-bottom: 5px;
-        width: 70%;
+    width: 70%;
 }
 .popup-bg2 table tr th{
-    margin: auto;
     background-color: #2E77F2;
     color: white;
 }

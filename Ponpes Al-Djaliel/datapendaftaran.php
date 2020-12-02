@@ -111,9 +111,7 @@
                 </tr>
             </table>
             <div class="registrasi inputan">
-                <div class="form-box">                
-                        
-                </div>
+                
                 <div class="form-box">
                         <div class="form-group">
                             <label for="fotopribadi">Upload Bukti Pembayaran</label>
