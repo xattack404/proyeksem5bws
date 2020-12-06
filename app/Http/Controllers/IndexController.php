@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Berita;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -13,7 +14,8 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('frontend.home.index');
+        $data = Berita::paginate(3);
+        return view('frontend.home.index', compact('data'));
     }
 
     /**

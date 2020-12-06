@@ -35,11 +35,17 @@
         <!-- galery akhir -->
 
         <!-- Information -->
+        @forelse($data as $berita)
         <div class="information-container">
-            <h1>Penerimaan Santri Baru</h1>
-            <img class="gambar" src="{{ asset('assets_frontend/IMG/informasi.jpg') }}" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi vitae sit deleniti reiciendis molestiae provident magnam sint perferendis quo molestias? Reiciendis reprehenderit mollitia natus, asperiores vel distinctio quia nam odio commodi iusto provident voluptas, iste facilis. Veritatis, quis laboriosam earum quia amet unde libero odit adipisci nemo. Facilis porro impedit delectus repellendus sint asperiores, quasi dicta nam et quam culpa aspernatur, iste adipisci veniam saepe nemo sunt consequatur quod nostrum rerum vitae. Pariatur at neque cumque voluptate praesentium excepturi molestias fugiat, natus aliquid quibusdam dicta alias rerum non omnis eveniet, molestiae vel numquam! Eligendi eius incidunt consequuntur asperiores itaque voluptas, similique perferendis. Quae omnis eos aspernatur unde a blanditiis error pariatur quis, maiores aliquam ex corrupti debitis quibusdam. Voluptatum maiores assumenda repellat natus. Quae deleniti quidem magnam repudiandae sit, eum ex quia quod asperiores? Fuga neque praesentium laudantium eveniet corporis! Aut dolores architecto praesentium optio temporibus deleniti amet quidem repellat, reiciendis assumenda dolore quis ullam, tempora nostrum maxime consequuntur et velit similique ut autem. Nisi molestiae earum obcaecati dolores nam enim facilis quibusdam vitae, consequuntur nostrum asperiores inventore commodi hic adipisci quisquam aut ullam sunt magni? Doloremque optio adipisci doloribus, sequi accusamus ea aliquam dolorem. Fugiat dolorum et nulla voluptate.</p>
+            <h1>{{ $berita->judul }}</h1>
+            <img class="gambar" src="{{ asset('foto/'. $berita->gambar) }}" alt="">
+            <p> {{ $berita->isi }}</p>
         </div>
+        @empty
+        <div class="information-container">
+            <p><b>Tidak Ada Berita</b></p>
+        </div>
+        @endforelse
         <!-- Information Akhir -->
 
         <!-- News -->

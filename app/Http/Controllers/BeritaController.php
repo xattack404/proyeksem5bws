@@ -93,7 +93,7 @@ class BeritaController extends Controller
             'foto' =>  $fileName,
             'kategori' => $request->kategori
         ]);
-        return redirect()->route('cabangolahraga.index');
+        return redirect()->route('berita.index');
     }
 
     /**
@@ -102,14 +102,14 @@ class BeritaController extends Controller
      * @param  \App\Berita  $berita
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Berita $id)
+    public function delete($id)
     {
         $data = Berita::find($id);
-        if (\File::exists(public_path('image/' . $data->foto))) {
+        if (\File::exists(public_path('foto/' . $data->foto))) {
 
-            \File::delete(public_path('image/' . $data->foto));
+            \File::delete(public_path('foto/' . $data->foto));
         }
         Berita::whereId($id)->delete();
-        return redirect()->route('cabangolahraga.index');
+        return redirect()->route('berita.index');
     }
 }
