@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Berita;
 use App\Kategori;
+
 use Illuminate\Http\Request;
 
 class BeritaController extends Controller
@@ -68,7 +69,7 @@ class BeritaController extends Controller
      * @param  \App\Berita  $berita
      * @return \Illuminate\Http\Response
      */
-    public function edit(Berita $id)
+    public function edit($id)
     {
         $data['kategori'] = Kategori::all();
         $data['berita'] = Berita::find($id);

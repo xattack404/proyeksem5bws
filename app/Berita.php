@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Kategori;
 
 class Berita extends Model
 {
@@ -16,4 +17,9 @@ class Berita extends Model
     ];
 
     public $timestamps = true;
+    public function relasiKategori()
+    {
+
+        return $this->belongsTo(Kategori::class, 'kategori');
+    }
 }
