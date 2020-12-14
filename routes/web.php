@@ -30,6 +30,10 @@ Route::get('panel/berita/edit/{id}', ['as' => 'berita.edit', 'uses' => 'BeritaCo
 Route::put('panel/berita/edit/{id}', ['as' => 'berita.update', 'uses' => 'BeritaController@update']);
 Route::get('panel/berita/delete/{id}', ['as' => 'berita.delete', 'uses' => 'BeritaController@delete']);
 
+//Route menu Pembayaran
+Route::get('panel/pembayaran', ['as' => 'pembayaran.index', 'uses' => 'PembayaranController@index']);
+
+
 //Route Menu Kategori
 Route::get('panel/kategori', ['as' => 'kategori.index', 'uses' => 'KategoriController@index']);
 Route::get('panel/kategori/create', ['as' => 'kategori.create', 'uses' => 'KategoriController@create']);

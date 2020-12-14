@@ -16,7 +16,7 @@
       </li>
       <li class="menu-header">Transaksi</li>
       <li class="">
-        <a class="nav-link" href="#"><i class="fas fa-money-check-alt"></i> <span>Manejemen Pembayaran</span></a>
+        <a class="nav-link" href="{{ route('pembayaran.index') }}"><i class="fas fa-money-check-alt"></i> <span>Manejemen Pembayaran</span></a>
       </li>
       <li class="menu-header">Data Master</li>
       <li class="">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Registrasi;
 use App\DetailRegistrasi;
+use App\Pembayaran;
 
 class RegistrasiController extends Controller
 {
@@ -87,6 +88,14 @@ class RegistrasiController extends Controller
             'status_ibu'            => $request->status_ibu,
             'scan_kk'               => $scan_kk
         ]);
+
+        $no_invoice = 'REG-' . $request->nisn;
+        Pembayaran::create([
+            'no_invoice'        => $no_invoice,
+            'nisn'              => $request->nisn,
+            'total_pembayaran'  => 100000
+        ]);
+
         return redirect()->route('frontend.registrasi.index');
     }
 
