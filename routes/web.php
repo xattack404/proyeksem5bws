@@ -41,3 +41,11 @@ Route::post('panel/kategori/create', ['as' => 'kategori.store', 'uses' => 'Kateg
 Route::get('panel/kategori/edit/{id}', ['as' => 'kategori.edit', 'uses' => 'KategoriController@edit']);
 Route::put('panel/kategori/edit/{id}', ['as' => 'kategori.update', 'uses' => 'KategoriController@update']);
 Route::get('panel/kategori/delete/{id}', ['as' => 'kategori.delete', 'uses' => 'KategoriController@delete']);
+
+//Route Menu Pengurus
+Route::get('panel/pengurus', ['as' => 'pengurus.index', 'uses' => 'PengurusController@index']);
+Route::get('panel/pengurus/create', ['as' => 'pengurus.create', 'uses' => 'PengurusController@create']);
+Route::post('panel/pengurus/create', ['as' => 'pengurus.store', 'uses' => 'PengurusController@store']);
+Route::get('panel/pengurus/edit/{id}', ['as' => 'pengurus.edit', 'uses' => 'PengurusController@edit']);
+Route::put('panel/pengurus/edit/{id}', ['as' => 'pengurus.update', 'uses' => 'PengurusController@update']);
+Route::get('panel/pengurus/delete/{id}', ['as' => 'pengurus.delete', 'uses' => 'PengurusController@delete']);

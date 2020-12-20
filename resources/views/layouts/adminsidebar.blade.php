@@ -25,7 +25,9 @@
       <li class="">
         <a class="nav-link" href="{{ route('berita.index') }}"><i class="fas fa-newspaper"></i> <span>Konten Web</span></a>
       </li>
-
+      <li class="">
+        <a class="nav-link" href="{{ route('pengurus.index') }}"><i class="fas fa-newspaper"></i> <span>Pengurus</span></a>
+      </li>
       </li>
     </ul>
   </aside>
