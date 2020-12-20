@@ -26,7 +26,7 @@
                             <label>Kategori Berita</label>
                             <select required name="kategori" class="form-control" data-live-search="true">
                                 @foreach($data['kategori'] as $kategori)
-                                <option value="{{ $kategori->id }}" {{ ($data['berita']->kategori == $kategori->id) ? 'selected' : '' }}>{{ $kategori->nama_kategori }} </option>
+                                <option value="{{ $kategori->id }}" {{ ($data['berita']->kategori== $kategori->id) ? 'selected' : '' }}>{{ $kategori->nama_kategori }} </option>
                                 @endforeach
                             </select>
                             <div class="form-group">

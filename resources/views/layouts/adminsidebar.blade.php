@@ -23,7 +23,7 @@
         <a class="nav-link" href="{{ route('kategori.index') }}"><i class="fas fa-chevron-circle-right"></i> <span>Kategori</span></a>
       </li>
       <li class="">
-        <a class="nav-link" href="{{ route('berita.index') }}"><i class="fas fa-newspaper"></i> <span>Berita</span></a>
+        <a class="nav-link" href="{{ route('berita.index') }}"><i class="fas fa-newspaper"></i> <span>Konten Web</span></a>
       </li>
 
       </li>
