@@ -81,17 +81,28 @@ class PengurusController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $fileName = 'img-' . date('Ymdhis') . '.' . $request->foto->getClientOriginalExtension();
-        $request->foto->move('img_profil/', $fileName);
-        Pengurus::create([
-            'nama_pengurus'          => $request->nama_pengurus,
-            'tempat_lahir'           => $request->tmpt_lahir,
-            'tgl_lahir'              => $request->tgl_lahir,
-            'pendidikan_terakhir'    => $request->pendidikan_terakhir,
-            'deskripsi'              => $request->deskripsi,
-            'foto'                   => $fileName
-        ]);
-        return redirect()->route('pengurus.index');
+        if (empty($request->foto)) {
+            Pengurus::whereId($id)->update([
+                'nama_pengurus'          => $request->nama_pengurus,
+                'tempat_lahir'           => $request->tmpt_lahir,
+                'tgl_lahir'              => $request->tgl_lahir,
+                'pendidikan_terakhir'    => $request->pendidikan_terakhir,
+                'deskripsi'              => $request->deskripsi,
+            ]);
+            return redirect()->route('pengurus.index');
+        } else {
+            $fileName = 'img-' . date('Ymdhis') . '.' . $request->foto->getClientOriginalExtension();
+            $request->foto->move('img_profil/', $fileName);
+            Pengurus::whereId($id)->update([
+                'nama_pengurus'          => $request->nama_pengurus,
+                'tempat_lahir'           => $request->tmpt_lahir,
+                'tgl_lahir'              => $request->tgl_lahir,
+                'pendidikan_terakhir'    => $request->pendidikan_terakhir,
+                'deskripsi'              => $request->deskripsi,
+                'foto'                   => $fileName
+            ]);
+            return redirect()->route('pengurus.index');
+        }
     }
 
     /**
