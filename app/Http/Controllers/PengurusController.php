@@ -81,8 +81,15 @@ class PengurusController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Pengurus::whereId($id)->update([
-            'nama_pengurus' => $request->nama_pengurus,
+        $fileName = 'img-' . date('Ymdhis') . '.' . $request->foto->getClientOriginalExtension();
+        $request->foto->move('img_profil/', $fileName);
+        Pengurus::create([
+            'nama_pengurus'          => $request->nama_pengurus,
+            'tempat_lahir'           => $request->tmpt_lahir,
+            'tgl_lahir'              => $request->tgl_lahir,
+            'pendidikan_terakhir'    => $request->pendidikan_terakhir,
+            'deskripsi'              => $request->deskripsi,
+            'foto'                   => $fileName
         ]);
         return redirect()->route('pengurus.index');
     }
@@ -95,7 +102,12 @@ class PengurusController extends Controller
      */
     public function delete($id)
     {
+        $data = Pengurus::find($id);
+        if (\File::exists(public_path('img_profil/' . $data->foto))) {
+
+            \File::delete(public_path('img_profil/' . $data->foto));
+        }
         Pengurus::whereId($id)->delete();
-        return redirect()->route('pegurus.index');
+        return redirect()->route('pengurus.index');
     }
 }

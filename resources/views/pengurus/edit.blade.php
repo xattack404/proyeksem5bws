@@ -41,7 +41,7 @@
             </div>
             <div class="form-group">
               <label>Gambar Sebelumnya</label><br />
-              <img src="{{ asset('foto/'. $data['berita']->gambar) }}" width='150' height='150'>
+              <img src="{{ asset('img_profil/'. $data['pengurus']->foto) }}" width='150' height='150'>
             </div>
             <div class="form-group">
               <label>* Foto Baru</label> <br>
