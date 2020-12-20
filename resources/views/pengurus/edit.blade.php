@@ -25,19 +25,19 @@
             </div>
             <div class="form-group">
               <label>Tempat Lahir</label>
-              <input type="text" name="tmpt_lahir" class="form-control">
+              <input type="text" name="tempat_lahir" class="form-control" value="{{ $data->tempat_lahir }}">
             </div>
             <div class="form-group">
               <label>Tanggal Lahir</label>
-              <input type="date" name="tgl_lahir" class="form-control">
+              <input type="date" name="tgl_lahir" class="form-control" value="{{ $data->tgl_lahir }}">
             </div>
             <div class="form-group">
               <label>Pendidikan Terakhir</label>
-              <input type="text" name="pendidikan_terakhir" class="form-control">
+              <input type="text" name="pendidikan_terakhir" class="form-control" value="{{ $data->pendidikan_terakhir }}">
             </div>
             <div class="form-group">
               <label>Deskripsi</label>
-              <textarea class="form-control" rows="10" id="isi" name="deskripsi" style="min-height: 300px"> </textarea>
+              <textarea class="form-control" rows="10" id="isi" name="deskripsi" style="min-height: 300px"> {{ $data->deskripsi }} </textarea>
             </div>
             <div class="form-group">
               <label>Gambar Sebelumnya</label><br />
