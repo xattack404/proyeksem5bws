@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Pendaftaran extends Model
+class BiayaPendaftaran extends Model
 {
     protected $table = 'biaya_pendaftaran';    
     protected $fillable = [

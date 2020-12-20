@@ -53,9 +53,9 @@ Route::put('panel/pengurus/edit/{id}', ['as' => 'pengurus.update', 'uses' => 'Pe
 Route::get('panel/pengurus/delete/{id}', ['as' => 'pengurus.delete', 'uses' => 'PengurusController@delete']);
 
 //Route Menu Pendaftaran
-Route::get('panel/pendaftaran', ['as' => 'pendaftaran.index', 'uses' => 'PendaftaranController@index']);
-Route::get('panel/pendaftaran/create', ['as' => 'pendaftaran.create', 'uses' => 'PendaftaranController@create']);
-Route::post('panel/pendaftaran/create', ['as' => 'pendaftaran.store', 'uses' => 'PendaftaranController@store']);
-Route::get('panel/pendaftaran/edit/{id}', ['as' => 'pendaftaran.edit', 'uses' => 'PendaftaranController@edit']);
-Route::put('panel/pendaftaran/edit/{id}', ['as' => 'pendaftaran.update', 'uses' => 'PendaftaranController@update']);
-Route::get('panel/pendaftaran/delete/{id}', ['as' => 'pendaftaran.delete', 'uses' => 'PendaftaranController@delete']);
+Route::get('panel/biayapendaftaran', ['as' => 'biayapendaftaran.index', 'uses' => 'BiayaPendaftaranController@index']);
+Route::get('panel/biayapendaftaran/create', ['as' => 'biayapendaftaran.create', 'uses' => 'BiayaPendaftaranController@create']);
+Route::post('panel/biayapendaftaran/create', ['as' => 'biayapendaftaran.store', 'uses' => 'BiayaPendaftaranController@store']);
+Route::get('panel/biayapendaftaran/edit/{id}', ['as' => 'biayapendaftaran.edit', 'uses' => 'BiayaPendaftaranController@edit']);
+Route::put('panel/biayapendaftaran/edit/{id}', ['as' => 'biayapendaftaran.update', 'uses' => 'BiayaPendaftaranController@update']);
+Route::get('panel/biayapendaftaran/delete/{id}', ['as' => 'biayapendaftaran.delete', 'uses' => 'BiayaPendaftaranController@delete']);

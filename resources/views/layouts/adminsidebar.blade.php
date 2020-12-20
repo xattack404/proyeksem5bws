@@ -29,7 +29,7 @@
         <a class="nav-link" href="{{ route('pengurus.index') }}"><i class="fas fa-newspaper"></i> <span>Pengurus</span></a>
       </li>
       <li class="">
-        <a class="nav-link" href="{{ route('pendaftaran.index') }}"><i class="fas fa-newspaper"></i> <span>Pendaftaran</span></a>
+        <a class="nav-link" href="{{ route('biayapendaftaran.index') }}"><i class="fas fa-newspaper"></i> <span>Biaya Pendaftaran</span></a>
       </li>
       </li>
     </ul>

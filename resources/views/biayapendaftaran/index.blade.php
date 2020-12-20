@@ -3,7 +3,7 @@
 <section class="section">
 
   <div class="section-header">
-    <h1>Pendaftaran</h1>
+    <h1> Biaya Pendaftaran</h1>
   </div>
 
   <div class="section-body">
@@ -18,12 +18,12 @@
               <button type="submit" class="btn btn-primary">Search</button>
             </div>
           </form>
-          <a href="{{ route('pendaftaran.index') }}" class="pull-right">
+          <a href="{{ route('biayapendaftaran.index') }}" class="pull-right">
             <button type="button" class="btn btn-info">All Data</button>
           </a>
         </div>
         <div class="card-header">
-          <a href="{{ route('pendaftaran.create') }}">
+          <a href="{{ route('biayapendaftaran.create') }}">
             <button type="button" class="btn btn-primary">Tambah Data</button>
           </a>
         </div>
@@ -32,18 +32,22 @@
             <thead>
               <tr>
                 <th scope="col">Jejang Didik</th>
+                <th scope="col">Harga Kitab</th>
+                <th scope="col">Harga Seragam</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
-              @forelse($data as $pendaftaran)
+              @forelse($data as $biayapendaftaran)
               <tr>
-                <td>{{ $pendaftaran->jejang_didik }}</td>
+                <td>{{ $biayapendaftaran->jejang_didik }}</td>
+                <td>{{ $biayapendaftaran->harga_kitab }}</td>
+                <td>{{ $biayapendaftaran->jejang_didik }}</td>
                 <td>
-                  <a href="{{ route('pendaftaran.edit', ['id' => $pendaftaran->id]) }}">
+                  <a href="{{ route('biayapendaftaran.edit', ['id' => $biayapendaftaran->id]) }}">
                     <button type="button" class="btn btn-sm btn-info">Edit</button>
                   </a>
-                  <a href="{{ route('pendaftaran.delete', ['id' => $pendaftaran->id]) }}" onclick="return confirm('Delete data?');">
+                  <a href="{{ route('biayapendaftaran.delete', ['id' => $biayapendaftaran->id]) }}" onclick="return confirm('Delete data?');">
                     <button type="button" class="btn btn-sm btn-danger">Hapus</button>
                   </a>
                 </td>

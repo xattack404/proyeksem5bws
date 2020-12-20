@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Pendaftaran;
+use App\BiayaPendaftaran;
 
-class PendaftaranController extends Controller
+class BiayaPendaftaranController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class PendaftaranController extends Controller
      */
     public function index()
     {
-        $data = Pendaftaran::paginate(10);
-        return view('pendaftaran.index', compact('data'));
+        $data = BiayaPendaftaran::paginate(10);
+        return view('biayapendaftaran.index', compact('data'));
     }
 
     /**
@@ -25,7 +25,7 @@ class PendaftaranController extends Controller
      */
     public function create()
     {
-        return view('pendaftaran.create');
+        return view('biayapendaftaran.create');
     }
 
     /**
@@ -36,12 +36,12 @@ class PendaftaranController extends Controller
      */
     public function store(Request $request)
     {
-            Pendaftaran::create([
+           BiayaPendaftaran::create([
                 'jejang_didik'          => $request->jejang_didik,
                 'harga_kitab'           => $request->harga_kitab,
                 'harga_seragam'         => $request->harga_seragam
                 ]);    
-        return redirect()->route('pendaftaran.index');
+        return redirect()->route('biayapendaftaran.index');
     }
 
     /**
@@ -63,8 +63,8 @@ class PendaftaranController extends Controller
      */
     public function edit($id)
     {
-        $data = Pendaftaran::find($id);
-        return view('pendaftaran.edit',compact('data'));
+        $data = BiayaPendaftaran::find($id);
+        return view('biayapendaftaran.edit',compact('data'));
     }
 
     /**
@@ -76,12 +76,12 @@ class PendaftaranController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Pendaftaran::create([
+        BiayaPendaftaran::whereId($id)->update([
             'jejang_didik'          => $request->jejang_didik,
             'harga_kitab'           => $request->harga_kitab,
             'harga_seragam'         => $request->harga_seragam
         ]);
-        return redirect()->route('pendaftaran.index');
+        return redirect()->route('biayapendaftaran.index');
     }
     /**
      * Remove the specified resource from storage.
@@ -91,8 +91,8 @@ class PendaftaranController extends Controller
      */
     public function delete($id)
     {
-        Pendaftaran::whereId($id)->delete();
-        return redirect()->route('pendaftaran.index');
+        BiayaPendaftaran::whereId($id)->delete();
+        return redirect()->route('biayapendaftaran.index');
     }
     
 }

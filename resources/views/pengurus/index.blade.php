@@ -32,6 +32,10 @@
             <thead>
               <tr>
                 <th scope="col">Nama Pengurus</th>
+                <th scope="col">Tempat Lahir</th>
+                <th scope="col">Tanggal Lahir</th>
+                <th scope="col">Pendidikan Terakhir</th>
+                <th scope="col">Deskripsi</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -39,6 +43,10 @@
               @forelse($data as $pengurus)
               <tr>
                 <td>{{ $pengurus->nama_pengurus }}</td>
+                <td>{{ $pengurus->tempat_lahir }}</td>
+                <td>{{ $pengurus->tgl_lahir }}</td>
+                <td>{{ $pengurus->pendidikan_terakhir }}</td>
+                <td>{{ $pengurus->deskripsi }}</td>
                 <td>
                   <a href="{{ route('pengurus.edit', ['id' => $pengurus->id]) }}">
                     <button type="button" class="btn btn-sm btn-info">Edit</button>
