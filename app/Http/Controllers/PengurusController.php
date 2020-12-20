@@ -15,7 +15,7 @@ class PengurusController extends Controller
     public function index()
     {
         $data = Pengurus::paginate(10);
-        return view('pengurus.index',compact('data'));
+        return view('pengurus.index', compact('data'));
     }
 
     /**
@@ -36,12 +36,16 @@ class PengurusController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'nama_pengurus' => 'required|unique:pengurus|max:50'
-            ]);
+        $fileName = 'img-' . date('Ymdhis') . '.' . $request->foto->getClientOriginalExtension();
+        $request->foto->move('img_profil/', $fileName);
         Pengurus::create([
-                        'nama_pengurus' => $request->nama_pengurus,
-                        ]);          
+            'nama_pengurus'          => $request->nama_pengurus,
+            'tempat_lahir'           => $request->tmpt_lahir,
+            'tgl_lahir'              => $request->tgl_lahir,
+            'pendidikan_terakhir'    => $request->pendidikan_terakhir,
+            'deskripsi'              => $request->deskripsi,
+            'foto'                   => $fileName
+        ]);
         return redirect()->route('pengurus.index');
     }
 
@@ -65,7 +69,7 @@ class PengurusController extends Controller
     public function edit($id)
     {
         $data = Pengurus::find($id);
-        return view('pengurus.edit',compact('data'));
+        return view('pengurus.edit', compact('data'));
     }
 
     /**
@@ -78,8 +82,8 @@ class PengurusController extends Controller
     public function update(Request $request, $id)
     {
         Pengurus::whereId($id)->update([
-            'nama_pengurus'=> $request->nama_pengurus,
-                                        ]);
+            'nama_pengurus' => $request->nama_pengurus,
+        ]);
         return redirect()->route('pengurus.index');
     }
 
@@ -94,5 +98,4 @@ class PengurusController extends Controller
         Pengurus::whereId($id)->delete();
         return redirect()->route('pegurus.index');
     }
-    
 }
