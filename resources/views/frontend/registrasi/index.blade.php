@@ -69,6 +69,10 @@
                 <label for="kodepos">Kode Pos</label>
                 <input id="kodepos" name="kode_pos" required type="number" placeholder="Isi Data">
             </div>
+            <div class="form-group">
+                <label for="desa">Biaya</label>
+                <input id="biaya" name="biaya" required type="text" readonly>
+            </div>
         </div>
     </div>
 
@@ -81,11 +85,10 @@
             <div class="form-group">
                 <label for="jenjangpend">Pendidikan Terakhir</label>
                 <select name="pend_ter" id="jenjangpend">
-                    <option value="">--Tentukan Pilihan--</option>
-                    <option value="Tidak Sekolah">Tidak Sekolah</option>
-                    <option value="SD">SD</option>
-                    <option value="SMP/MTs">SMP/MTs</option>
-                    <option value="SMA/SMK/MA">SMA/SMK/MA</option>
+                    <option value="">--Pilih Satu-- </option>
+                    @foreach($data['kategori'] as $jepend)
+                    <option value="{{ $jepend->id }}">{{ $jepend->jejang_didik }} </option>
+                    @endforeach
                 </select>
             </div>
             <div class="form-group">
@@ -187,7 +190,32 @@
             </div>
         </div>
     </div>
+    <scrip src="{{ asset('assets_frontend/js/jquery-3.4.1.min.js') }}">
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('select[name="pend_ter"]').on('change', function() {
+                    var getID = $(this).val();
+                    if (getID) {
+                        $.ajax({
+                            url: "{{ url('ajax') }}/" + getID,
+                            type: "GET",
+                            dataType: "json",
+                            success: function(data) {
+                                $('input[name="biaya"]').empty();
+                                $.each(data, function(key, value) {
+                                    $('input[name="biaya"]').val('' + value.harga + '');
+                                });
+                            }
+                        });
+                    } else {
+                        $('select[name="biaya"]').empty();
+                    }
+                });
+            });
+        </script>
 </form>
+
 
 </body>
 

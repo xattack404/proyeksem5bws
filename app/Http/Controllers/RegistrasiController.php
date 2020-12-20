@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Registrasi;
 use App\DetailRegistrasi;
 use App\Pembayaran;
+use App\Kategori;
 
 class RegistrasiController extends Controller
 {
@@ -16,6 +17,7 @@ class RegistrasiController extends Controller
      */
     public function index()
     {
+        $data['kategori'] = Kategori::all();
         return view('frontend.registrasi.index');
     }
 
@@ -105,9 +107,12 @@ class RegistrasiController extends Controller
      * @param  \App\Registrasi  $registrasi
      * @return \Illuminate\Http\Response
      */
-    public function show(Registrasi $registrasi)
+    public function show($id)
     {
-        //
+        $data = Kategori::where('id', $id)
+            ->get();
+
+        return json_encode($data);
     }
 
     /**

@@ -21,7 +21,7 @@
             @csrf
             <div class="form-group">
               <label>Name Pengurus</label>
-              <input type="text" name="nama_pengurus" class="form-control">
+              <input type="text" name="nama_pengurus" class="form-control" value="{{ $data->nama_pengurus }}">
             </div>
             <div class="form-group">
               <label>Tempat Lahir</label>
@@ -41,7 +41,7 @@
             </div>
             <div class="form-group">
               <label>Gambar Sebelumnya</label><br />
-              <img src="{{ asset('img_profil/'. $data['pengurus']->foto) }}" width='150' height='150'>
+              <img src="{{ asset('img_profil/'. $data->foto) }}" width='150' height='150'>
             </div>
             <div class="form-group">
               <label>* Foto Baru</label> <br>
