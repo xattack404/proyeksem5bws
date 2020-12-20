@@ -17,7 +17,8 @@
           </a>
         </div>
         <div class="card-body">
-          <form action="{{ route('pengurus.store') }}" method="POST" enctype="multipart/form-data">
+          <form action="{{ route('pengurus.update', ['id' => $data->id]) }}" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_method" value="PUT">
             @csrf
             <div class="form-group">
               <label>Name Pengurus</label>
@@ -25,7 +26,7 @@
             </div>
             <div class="form-group">
               <label>Tempat Lahir</label>
-              <input type="text" name="tempat_lahir" class="form-control" value="{{ $data->tempat_lahir }}">
+              <input type="text" name="tmpt_lahir" class="form-control" value="{{ $data->tempat_lahir }}">
             </div>
             <div class="form-group">
               <label>Tanggal Lahir</label>
@@ -45,7 +46,7 @@
             </div>
             <div class="form-group">
               <label>* Foto Baru</label> <br>
-              <input type="file" name="foto" id="foto" onchange="tampilkanPreview(this,'preview')" required />
+              <input type="file" name="foto" id="foto" onchange="tampilkanPreview(this,'preview')" />
             </div>
 
             <div class="form-group">

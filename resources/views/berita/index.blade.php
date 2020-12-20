@@ -42,7 +42,7 @@
                             <tr>
                                 <td>{{ $berita->judul }}</td>
                                 <td><img src="{{ asset('foto/'. $berita->gambar) }}" width='75' height='75'></td>
-                                <td>{{ $berita->kategori }}</td>
+                                <td>{{ $berita->relasiKategori->nama_kategori }}</td>
                                 <td>
                                     <a href="{{ route('berita.edit', ['id' => $berita->id]) }}">
                                         <button type="button" class="btn btn-sm btn-info">Edit</button>
