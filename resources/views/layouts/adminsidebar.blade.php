@@ -31,6 +31,9 @@
       <li class="">
         <a class="nav-link" href="{{ route('biayapendaftaran.index') }}"><i class="fas fa-newspaper"></i> <span>Biaya Pendaftaran</span></a>
       </li>
+      <li class="">
+        <a class="nav-link" href="{{ route('kontak.index') }}"><i class="fas fa-newspaper"></i> <span>Kontak</span></a>
+      </li>
       </li>
     </ul>
   </aside>

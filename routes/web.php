@@ -59,3 +59,11 @@ Route::post('panel/biayapendaftaran/create', ['as' => 'biayapendaftaran.store', 
 Route::get('panel/biayapendaftaran/edit/{id}', ['as' => 'biayapendaftaran.edit', 'uses' => 'BiayaPendaftaranController@edit']);
 Route::put('panel/biayapendaftaran/edit/{id}', ['as' => 'biayapendaftaran.update', 'uses' => 'BiayaPendaftaranController@update']);
 Route::get('panel/biayapendaftaran/delete/{id}', ['as' => 'biayapendaftaran.delete', 'uses' => 'BiayaPendaftaranController@delete']);
+
+//Route Menu Kontak
+Route::get('panel/kontak', ['as' => 'kontak.index', 'uses' => 'KontakController@index']);
+Route::get('panel/kontak/create', ['as' => 'kontak.create', 'uses' => 'KontakController@create']);
+Route::post('panel/kontak/create', ['as' => 'kontak.store', 'uses' => 'KontakController@store']);
+Route::get('panel/kontak/edit/{id}', ['as' => 'kontak.edit', 'uses' => 'KontakController@edit']);
+Route::put('panel/kontak/edit/{id}', ['as' => 'kontak.update', 'uses' => 'KontakController@update']);
+Route::get('panel/kontak/delete/{id}', ['as' => 'kontak.delete', 'uses' => 'KontakController@delete']);

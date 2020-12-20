@@ -3,7 +3,7 @@
 <section class="section">
 
   <div class="section-header">
-    <h1>Pendaftaran <small>Tambah Data</small></h1>
+    <h1>Biaya Pendaftaran <small>Tambah Data</small></h1>
   </div>
 
   <div class="section-body">
