@@ -50,3 +50,11 @@ Route::post('panel/pengurus/create', ['as' => 'pengurus.store', 'uses' => 'Pengu
 Route::get('panel/pengurus/edit/{id}', ['as' => 'pengurus.edit', 'uses' => 'PengurusController@edit']);
 Route::put('panel/pengurus/edit/{id}', ['as' => 'pengurus.update', 'uses' => 'PengurusController@update']);
 Route::get('panel/pengurus/delete/{id}', ['as' => 'pengurus.delete', 'uses' => 'PengurusController@delete']);
+
+//Route Menu Pendaftaran
+Route::get('panel/pendaftaran', ['as' => 'pendaftaran.index', 'uses' => 'PendaftaranController@index']);
+Route::get('panel/pendaftaran/create', ['as' => 'pendaftaran.create', 'uses' => 'PendaftaranController@create']);
+Route::post('panel/pendaftaran/create', ['as' => 'pendaftaran.store', 'uses' => 'PendaftaranController@store']);
+Route::get('panel/pendaftaran/edit/{id}', ['as' => 'pendaftaran.edit', 'uses' => 'PendaftaranController@edit']);
+Route::put('panel/pendaftaran/edit/{id}', ['as' => 'pendaftaran.update', 'uses' => 'PendaftaranController@update']);
+Route::get('panel/pendaftaran/delete/{id}', ['as' => 'pendaftaran.delete', 'uses' => 'PendaftaranController@delete']);
