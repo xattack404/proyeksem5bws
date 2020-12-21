@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Registrasi;
+
 
 class Pembayaran extends Model
 {
@@ -14,4 +16,9 @@ class Pembayaran extends Model
         'bukti_pembayaran'
     ];
     public $timestamps = true;
+
+    public function registrasi()
+    {
+        return $this->belongsTo(Registrasi::class, 'nisn', 'nisn');
+    }
 }

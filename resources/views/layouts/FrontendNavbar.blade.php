@@ -19,7 +19,7 @@
             <li><a href="pembelajaransantri.php">Pembelajaran Santri</a></li>
             <li><a href="{{ route('frontend.registrasi.index')}}">Pendaftaran Santri Baru</a></li>
             <li><a href="{{ route('frontend.cekdata.index')}}">Cek Data Pendaftar</a></li>
-            <li><a href="{{ route('home')}}">Halaman Utama</a></li>
+            <li><a href="{{ route('frontend.home.index')}}">Halaman Utama</a></li>
         </ul>
         <label class="tie" for="ribbon"></label>
     </nav>

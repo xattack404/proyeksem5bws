@@ -18,8 +18,8 @@
     <form action="" class="registrasi2">
         <div class="form-group2">
             <label for="nama">Masukan nomor pendaftaran yang masuk ke alamat email yang anda daftarkan</label>
-            <input id="nama" type="text" placeholder="Masukan No Pendaftaran Anda">
-            <a href="#popup2" class="button green" target="">Cek Data Pendaftaran</a>
+            <input id="nisn" name="nisn" type="text" placeholder="Masukan No Pendaftaran Anda">
+            <a href="#popup2" onclick="LoadData()" class="button green" target="">Cek Data Pendaftaran</a>
             <a href="registrasi.php" class="button blue">Belum Daftar</a>
         </div>
     </form>
@@ -141,6 +141,18 @@
             window.print();
 
             document.body.innerHTML = originalContents;
+        }
+    </script>
+    <script type="text/javascript">
+        function LoadData() {
+            var nisn = $('#nisn').val();
+            $.ajax({
+                url: "{{ url('cekdata/form') }}/" + nisn,
+                type: "GET",
+                success: function(data) {
+                    $('#popup2').html(data);
+                }
+            });
         }
     </script>
 </body>

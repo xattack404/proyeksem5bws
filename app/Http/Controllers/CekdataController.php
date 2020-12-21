@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\BiayaPendaftaran;
+use App\Pembayaran;
+
 use Illuminate\Http\Request;
 
 class CekdataController extends Controller
@@ -32,9 +35,10 @@ class CekdataController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function form($nisn)
     {
-        //
+        $data = Pembayaran::where('nisn', $nisn)->first();
+        return view('frontend.cekdata.form', compact('data'));
     }
 
     /**
@@ -43,9 +47,14 @@ class CekdataController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function update(Request $request, $nisn)
     {
-        //
+        $fileName = 'buktibyr-' . date('Ymdhis') . '.' . $request->foto->getClientOriginalExtension();
+        $request->foto->move('bukti_bayar/', $fileName);
+        Pembayaran::whereNisn($nisn)->update([
+            'bukti_pembayaran' => $fileName
+        ]);
+        return redirect()->route('frontend.cekdata.index');
     }
 
     /**
@@ -59,17 +68,7 @@ class CekdataController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+
 
     /**
      * Remove the specified resource from storage.
