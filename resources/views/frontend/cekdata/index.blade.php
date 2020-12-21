@@ -10,6 +10,7 @@
     <script src="{{ asset('assets_frontend/JS/pagination.js') }}"></script>
 </head>
 
+@include('layouts.FrontendNavbar')
 
 <body class="bg-registrasi2">
     <!-- Navbar -->
