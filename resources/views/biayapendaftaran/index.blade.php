@@ -42,7 +42,7 @@
               <tr>
                 <td>{{ $biayapendaftaran->jejang_didik }}</td>
                 <td>{{ $biayapendaftaran->harga_kitab }}</td>
-                <td>{{ $biayapendaftaran->jejang_didik }}</td>
+                <td>{{ $biayapendaftaran->harga_seragam }}</td>
                 <td>
                   <a href="{{ route('biayapendaftaran.edit', ['id' => $biayapendaftaran->id]) }}">
                     <button type="button" class="btn btn-sm btn-info">Edit</button>

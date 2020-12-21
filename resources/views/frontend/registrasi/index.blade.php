@@ -4,6 +4,7 @@
     @csrf
     <div class="form-box">
         <div class="form-kategori">
+            @include('layouts.partials.alert')
             <div class="judulkategori">
                 <h1>Informasi Pribadi Santri</h1>
             </div>
@@ -70,9 +71,14 @@
                 <input id="kodepos" name="kode_pos" required type="number" placeholder="Isi Data">
             </div>
             <div class="form-group">
-                <label for="desa">Biaya</label>
-                <input id="biaya" name="biaya" required type="text" readonly>
+                <label for="desa">Biaya Seragam</label>
+                <input id="biaya1" name="biaya1" required type="text" readonly>
             </div>
+            <div class="form-group">
+                <label for="desa">Biaya Kitab</label>
+                <input id="biaya2" name="biaya2" required type="text" readonly>
+            </div>
+
         </div>
     </div>
 
@@ -86,7 +92,7 @@
                 <label for="jenjangpend">Pendidikan Terakhir</label>
                 <select name="pend_ter" id="jenjangpend">
                     <option value="">--Pilih Satu-- </option>
-                    @foreach($data['kategori'] as $jepend)
+                    @foreach($data as $jepend)
                     <option value="{{ $jepend->id }}">{{ $jepend->jejang_didik }} </option>
                     @endforeach
                 </select>
@@ -114,7 +120,7 @@
                 <input id="kartukeluarga" name="no_kk" required type="tel" placeholder="Isi Data">
             </div>
             <div class="form-group">
-                <label for="kepala">Nomor Kepala Keluarga</label>
+                <label for="kepala">NIK Kepala Keluarga</label>
                 <input id="kepala" name="nkk" required type="text" placeholder="Isi Data">
             </div>
             <div class="form-group">
@@ -186,7 +192,7 @@
             <div class="form-group">
                 <!-- <button type="submit" class="button green">Kirim</button> -->
                 <button type="submit" class="button green">SAVE</button>
-                <a href="datapendaftaran.php" class="button blue">Cek Data Pendaftaran</a>
+                <a href="{{ route('frontend.cekdata.index') }}" class="button blue">Cek Data Pendaftaran</a>
             </div>
         </div>
     </div>
@@ -202,14 +208,15 @@
                             type: "GET",
                             dataType: "json",
                             success: function(data) {
-                                $('input[name="biaya"]').empty();
+                                $('input[name="biaya1"]').empty();
                                 $.each(data, function(key, value) {
-                                    $('input[name="biaya"]').val('' + value.harga + '');
+                                    $('input[name="biaya1"]').val('' + value.harga_seragam + '');
+                                    $('input[name="biaya2"]').val('' + value.harga_kitab + '');
                                 });
                             }
                         });
                     } else {
-                        $('select[name="biaya"]').empty();
+                        $('select[name="biaya1"]').empty();
                     }
                 });
             });

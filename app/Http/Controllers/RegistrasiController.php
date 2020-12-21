@@ -7,6 +7,8 @@ use App\Registrasi;
 use App\DetailRegistrasi;
 use App\Pembayaran;
 use App\Kategori;
+use App\BiayaPendaftaran;
+
 
 class RegistrasiController extends Controller
 {
@@ -17,8 +19,8 @@ class RegistrasiController extends Controller
      */
     public function index()
     {
-        $data['kategori'] = Kategori::all();
-        return view('frontend.registrasi.index');
+        $data = BiayaPendaftaran::all();
+        return view('frontend.registrasi.index', compact('data'));
     }
 
     /**
@@ -92,13 +94,14 @@ class RegistrasiController extends Controller
         ]);
 
         $no_invoice = 'REG-' . $request->nisn;
+        $total_pembayaran = $request->biaya1 + $request->biaya2;
         Pembayaran::create([
             'no_invoice'        => $no_invoice,
             'nisn'              => $request->nisn,
-            'total_pembayaran'  => 100000
+            'total_pembayaran'  => $total_pembayaran
         ]);
 
-        return redirect()->route('frontend.registrasi.index');
+        return redirect()->route('frontend.registrasi.index')->with('succes', 'Registrasi Berhasil.');
     }
 
     /**
@@ -109,7 +112,7 @@ class RegistrasiController extends Controller
      */
     public function show($id)
     {
-        $data = Kategori::where('id', $id)
+        $data = BiayaPendaftaran::where('id', $id)
             ->get();
 
         return json_encode($data);

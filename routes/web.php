@@ -16,6 +16,7 @@ Route::get('registrasi/index', ['as' => 'frontend.registrasi.index', 'uses' => '
 Route::post('registrasi/simpan', ['as' => 'frontend.registrasi.store', 'uses' => 'RegistrasiController@store']);
 Route::get('ajax/{id}', ['as' => 'frontend.registrasi.ajax', 'uses' => 'RegistrasiController@show']);
 Route::get('news/detailnews/{url}', ['as' => 'frontend.home.detailnews', 'uses' => 'IndexController@detailnews']);
+Route::get('cekdata/index', ['as' => 'frontend.cekdata.index', 'uses' => 'CekdataController@index']);
 
 
 Auth::routes();
