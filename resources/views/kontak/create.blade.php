@@ -29,7 +29,7 @@
             </div>
             <div class="form-group">
               <label>No Telepon</label>
-              <input type="text" maxlength="13" minlength="11" onkeypress="return Angkasaja(event)" name="no_telp" class="form-control">
+              <input type="number" name="no_telp" class="form-control">
             </div>
             <div class="form-group">
               <label>Email</label>
@@ -38,7 +38,7 @@
             </div>
             <div class="form-group">
               <label>Rekening</label>
-              <input type="text" name="rekening" class="form-control">
+              <input type="number" name="rekening" class="form-control">
             </div>
             <div class="form-group">
               <button type="submit" class="btn btn-primary">SAVE</button>
