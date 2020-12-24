@@ -1560,3 +1560,7 @@ text-transform: capitalize;
 .button-print{
 }
 /* ====== Print Akhir =========*/
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
