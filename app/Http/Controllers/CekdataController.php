@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\BiayaPendaftaran;
 use App\Pembayaran;
+use App\Registrasi;
 
 use Illuminate\Http\Request;
 

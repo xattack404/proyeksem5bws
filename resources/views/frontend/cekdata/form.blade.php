@@ -48,15 +48,15 @@
                 <th>Harga Kitab</th>
             </tr>
             <tr>
-                <td>Rp. 100000</td>
-                <td>Rp. 75000</td>
+                <td>Rp. {{ number_format($cekdata->jejang->harga_kitab,0, ',' , '.') }}</td>
+                <td>Rp. {{ number_format($cekdata->jejang->harga_seragam,0, ',' , '.') }}</td>
             </tr>
             <tr>
                 <th style="background-color: #D4213E;">Total yang harus dibayara</th>
                 <th style="background-color: #21D44B;">Status Pembayara</th>
             </tr>
             <tr>
-                <td>{{ $data->total_pembayaran }}</td>
+                <td>Rp. {{ number_format($data->total_pembayaran,0, ',' , '.') }}</td>
                 <td>{{ $data->status }}</td>
             </tr>
         </table>

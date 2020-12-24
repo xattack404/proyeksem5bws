@@ -86,7 +86,7 @@ class BeritaController extends Controller
     public function update(Request $request, Berita $id)
     {
         $fileName = 'lomba-' . date('Ymdhis') . '.' . $request->foto->getClientOriginalExtension();
-        $request->foto->move('image/', $fileName);
+        $request->foto->move('foto/', $fileName);
         Berita::whereId($id)->update([
             'judul' => $request->judul,
             'seo_berita' => strtolower(str_replace(" ", "-", $request->judul)),

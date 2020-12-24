@@ -17,6 +17,11 @@ class IndexController extends Controller
         $data = Berita::paginate(3);
         return view('frontend.home.index', compact('data'));
     }
+    public function news()
+    {
+        $data = Berita::paginate(3);
+        return view('frontend.home.news', compact('data'));
+    }
 
     /**
      * Show the form for creating a new resource.

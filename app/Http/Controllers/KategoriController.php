@@ -14,8 +14,8 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        $data = Kategori::paginate(10);
-        return view('kategori.index',compact('data'));
+        $data = Kategori::paginate(1);
+        return view('kategori.index', compact('data'));
     }
 
     /**
@@ -38,10 +38,10 @@ class KategoriController extends Controller
     {
         $validatedData = $request->validate([
             'nama_kategori' => 'required|unique:kategori|max:50'
-            ]);
+        ]);
         Kategori::create([
-                        'nama_kategori' => $request->nama_kategori,
-                        ]);          
+            'nama_kategori' => $request->nama_kategori,
+        ]);
         return redirect()->route('kategori.index');
     }
 
@@ -65,7 +65,7 @@ class KategoriController extends Controller
     public function edit($id)
     {
         $data = Kategori::find($id);
-        return view('kategori.edit',compact('data'));
+        return view('kategori.edit', compact('data'));
     }
 
     /**
@@ -78,8 +78,8 @@ class KategoriController extends Controller
     public function update(Request $request, $id)
     {
         Kategori::whereId($id)->update([
-            'nama_kategori'=> $request->nama_kategori,
-                                        ]);
+            'nama_kategori' => $request->nama_kategori,
+        ]);
         return redirect()->route('kategori.index');
     }
 
@@ -94,5 +94,4 @@ class KategoriController extends Controller
         Kategori::whereId($id)->delete();
         return redirect()->route('kategori.index');
     }
-    
 }

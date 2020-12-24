@@ -9,24 +9,16 @@
         <!-- Table structure here -->
         <table class="tablepaginitation" id="our-table">
             <div id="page-news">
-                <script>
-                    var newsData = [
+                @forelse($data as $news)
+                <h1>{{ $news->judul }}</h1>
+                <img src="{{ asset('foto/'. $news->gambar) }}" alt="">
 
-                        {
-                            'judul': '<h1>Al-Djaliel adakan makan bareng santri satu minggu sekali</h1>',
-
-                            'waktu': '<p><span>October</span> <span>01</span>,<span>2020</span></p>',
-
-                            'gambar': '<img src="IMG/berita.JPG" alt="">',
-
-                            'teks': '<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil ipsa quasi explicabo at, reiciendis, odio eum laudantium quaerat iste facilis iure tempore praesentium atque fugit delectus dicta impedit recusandae! Sint vero laudantium eveniet ducimus sit laborum quam voluptates aliquam similique sunt, ipsam, iusto impedit, ea modi recusandae eaque fuga reiciendis!</p>',
-
-                            'selanjutnya': '<a href="berita.php">baca selanjutnya...</a>',
-                        },
-                    ]
-                </script>
+                @empty
+                <h2>belum ada</h2>
+                @endforelse
             </div>
         </table>
+        {!! $data->appends(request()->except('page'))->render() !!}
     </div>
 
     <div class="container-pagination ">

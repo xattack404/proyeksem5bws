@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\BiayaPendaftaran;
 
 class Registrasi extends Model
 {
@@ -27,4 +28,9 @@ class Registrasi extends Model
         'file_ijazah'
     ];
     public $timestamps = true;
+
+    public function jejang()
+    {
+        return $this->belongsTo(BiayaPendaftaran::class, 'pendidikan_terakhir');
+    }
 }

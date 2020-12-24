@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Registrasi;
-
+use App\BiayaPendaftaran;
 
 class Pembayaran extends Model
 {
