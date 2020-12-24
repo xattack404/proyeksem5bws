@@ -29,11 +29,12 @@
             </div>
             <div class="form-group">
               <label>No Telepon</label>
-              <input type="text" name="no_telp" class="form-control">
+              <input type="text" maxlength="13" minlength="11" onkeypress="return Angkasaja(event)" name="no_telp" class="form-control">
             </div>
             <div class="form-group">
               <label>Email</label>
-              <input type="text" name="email" class="form-control">
+              <input type="email" name="email" class="form-control">
+              <span class="warning"></span>
             </div>
             <div class="form-group">
               <label>Rekening</label>
