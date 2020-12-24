@@ -827,12 +827,13 @@ color: white;
 #page-news ul{
 display: block;
 width: 100%;
-margin-bottom: 50px;
 padding: 10px;
 box-sizing: border-box;
 }
 #page-news ul li{
 list-style: none;
+display: block;
+margin-bottom: 50px;
 }
 #page-news ul li h1{
 font-size: 5vmin;
@@ -895,7 +896,7 @@ padding-right: 10px;
 box-sizing: border-box;
 }
 footer::before{
-content: "Copyright Template Kelompok 25 TIF BWS";
+content: "Copyright Template Tahajjudin Fajri";
 position: absolute;
 bottom: 0;
 margin-bottom: 5px;
@@ -1432,10 +1433,12 @@ transform: scale(1.05);
 .popup-bg2 table{
     text-align: left;
     border: 1px solid black;
+    margin: auto;
     margin-bottom: 5px;
-    width: 70%;
+        width: 70%;
 }
 .popup-bg2 table tr th{
+    margin: auto;
     background-color: #2E77F2;
     color: white;
 }
@@ -1446,7 +1449,7 @@ transform: scale(1.05);
     /* background-color: #ECF0F1; */
     margin: auto;
     margin-top: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     padding: 0px;
     box-sizing: border-box;
     display: flex;
