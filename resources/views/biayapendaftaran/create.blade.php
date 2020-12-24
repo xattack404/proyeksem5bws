@@ -25,11 +25,11 @@
             </div>
             <div class="form-group">
               <label>Harga Kitab</label>
-              <input type="text" name="harga_kitab" class="form-control">
+              <input type="varchar" name="harga_kitab" class="form-control">
             </div>
             <div class="form-group">
               <label>Harga Seragam</label>
-              <input type="text" name="harga_seragam" class="form-control">
+              <input type="varchar" name="harga_seragam" class="form-control">
             </div>
             <div class="form-group">
               <button type="submit" class="btn btn-primary">SAVE</button>
