@@ -1,4 +1,4 @@
-<form id="popup2" action="{{ route('frontend.cekdata.submit', ['nisn' => $data->nisn]) }}" enctype="multipart/form-data" method="POST">
+<form id="popup3" action="{{ route('frontend.cekdata.submit', ['nisn' => $data->nisn]) }}" enctype="multipart/form-data" method="POST">
     <input type="hidden" name="_method" value="PUT">
     @csrf
     <div class="popup-bg2">

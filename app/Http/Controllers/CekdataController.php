@@ -51,7 +51,7 @@ class CekdataController extends Controller
     public function update(Request $request, $nisn)
     {
         $fileName = 'buktibyr-' . date('Ymdhis') . '.' . $request->foto->getClientOriginalExtension();
-        $request->foto->move('bukti_bayar/', $fileName);
+        $request->foto->move('buktipembayaran/', $fileName);
         Pembayaran::whereNisn($nisn)->update([
             'bukti_pembayaran' => $fileName
         ]);

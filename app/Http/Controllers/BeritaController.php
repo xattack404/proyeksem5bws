@@ -73,6 +73,7 @@ class BeritaController extends Controller
     {
         $data['kategori'] = Kategori::all();
         $data['berita'] = Berita::find($id);
+
         return view('berita.edit', compact('data'));
     }
 
