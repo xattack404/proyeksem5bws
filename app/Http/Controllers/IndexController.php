@@ -19,7 +19,7 @@ class IndexController extends Controller
     }
     public function news()
     {
-        $data = Berita::paginate(3);
+        $data = Berita::paginate(1);
         return view('frontend.home.news', compact('data'));
     }
 
