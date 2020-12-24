@@ -23,25 +23,25 @@
                         </li>
                         <?php } ?>
                     </ul> 
-                    <div id="list_index" class="box"></div> 
 
-                    <script type="text/javascript">
-                        window.addEventListener("load", function () {
-                        paginator({
-                        get_rows: function () {
-                        return document.getElementById("list").getElementsByTagName("li");
-                        },
-                        box: document.getElementById("list_index"),
-                        active_class: "color_page"
-                        });
-                        }, false);  
-                    </script>
+                   
             </div>
         </table>
-        {!! $data->appends(request()->except('page'))->render() !!}
     </div>
 
     <div class="container-pagination ">
-        <div id="pagination-wrapper"></div>
+        <div id="list_index" class="box"></div> 
     </div>
+        <script type="text/javascript">
+            window.addEventListener("load", function () {
+            paginator({
+            get_rows: function () {
+            return document.getElementById("list").getElementsByTagName("li");
+            },
+            box: document.getElementById("list_index"),
+            active_class: "color_page"
+            });
+            }, false);  
+        </script>            
+    {!! $data->appends(request()->except('page'))->render() !!}
 </div>
