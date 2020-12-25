@@ -38,6 +38,9 @@ Route::get('panel/berita/delete/{id}', ['as' => 'berita.delete', 'uses' => 'Beri
 
 //Route menu Pembayaran
 Route::get('panel/pembayaran', ['as' => 'pembayaran.index', 'uses' => 'PembayaranController@index']);
+Route::get('panel/pembayaran/proses/{no_invoice}', ['as' => 'pembayaran.proses', 'uses' => 'PembayaranController@proses']);
+Route::get('panel/pembayaran/verifikasi/{no_invoice}', ['as' => 'pembayaran.verifikasi', 'uses' => 'PembayaranController@verifikasi']);
+Route::get('panel/pembayaran/tolak/{no_invoice}', ['as' => 'pembayaran.tolak', 'uses' => 'PembayaranController@tolak']);
 
 
 //Route Menu Kategori

@@ -49,15 +49,21 @@
                                     <a href="">
                                         <button type="button" class="btn btn-sm btn-info">Detail</button>
                                     </a>
-                                    <a href="{{ route('pembayaran.proses', ['no_invoice' => $pembayaran->no_invoice]) }}">
+                                    @if($pembayaran->status == 'Pending')
+                                    <a href="{{ route('pembayaran.proses', ['no_invoice' => $pembayaran->no_invoice]) }}" onclick="return confirm('Proses Pendaftaran?');">
                                         <button type="button" class="btn btn-sm btn-info">Proses</button>
                                     </a>
-                                    <a href="{{ route('pembayaran.verifikasi', ['no_invoice' => $pembayaran->no_invoice]) }}">
+                                    @endif
+                                    @if($pembayaran->status == 'Proses')
+                                    <a href="{{ route('pembayaran.verifikasi', ['no_invoice' => $pembayaran->no_invoice]) }}" onclick="return confirm('Apakah Data akan di Verifikasi? Pastikan Berkas sudah benar');">
                                         <button type="button" class="btn btn-sm btn-info">Verifikasi</button>
                                     </a>
-                                    <a href="" onclick="return confirm('Delete data?');">
+                                    @endif
+                                    @if($pembayaran->status == 'Pending')
+                                    <a href="{{ route('pembayaran.tolak', ['no_invoice' => $pembayaran->no_invoice]) }}" onclick="return confirm('Yakin Pendaftaran akan di Tolak?');">
                                         <button type="button" class="btn btn-sm btn-danger">Tolak</button>
                                     </a>
+                                    @endif
                                 </td>
                             </tr>
                             @empty
