@@ -18,6 +18,31 @@ class PembayaranController extends Controller
         return view('pembayaran.index', compact('data'));
     }
 
+    public function proses($no_invoice)
+    {
+        Pembayaran::where('no_invoice', $no_invoice)->update([
+            'status' => 'Proses'
+
+        ]);
+        return redirect()->route('pembayaran.index');
+    }
+
+    public function verifikasi($no_invoice)
+    {
+        Pembayaran::where('no_invoice', $no_invoice)->update([
+            'status' => 'Verifikasi'
+
+        ]);
+        return redirect()->route('pembayaran.index');
+    }
+    public function tolak($no_invoice)
+    {
+        Pembayaran::where('no_invoice', $no_invoice)->update([
+            'status' => 'Ditolak'
+
+        ]);
+        return redirect()->route('pembayaran.index');
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -30,9 +30,9 @@
                         <thead>
                             <tr>
                                 <th scope="col">No Invoice</th>
-                                <th scope="col">NISN</th>
                                 <th scope="col">Total Pembayaran</th>
                                 <th scope="col">Bukti Pembayaran</th>
+                                <th scope="col">Scan Ijazah</th>
                                 <th scope="col">Status</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -41,18 +41,18 @@
                             @forelse($data as $pembayaran)
                             <tr>
                                 <td>{{ $pembayaran->no_invoice }}</td>
-                                <td>{{ $pembayaran->nisn }}</td>
                                 <td>{{ $pembayaran->total_pembayaran }}</td>
-                                <td>{{ $pembayaran->bukti_pembayaran }}</td>
+                                <td><img src="{{ asset('buktipembayaran/'. $pembayaran->bukti_pembayaran) }}" width='75' height='75'></td>
+                                <td><img src="{{ asset('scn_ijz/'. $pembayaran->registrasi->file_ijazah) }}" width='75' height='75'></td>
                                 <td>{{ $pembayaran->status }}</td>
                                 <td>
                                     <a href="">
                                         <button type="button" class="btn btn-sm btn-info">Detail</button>
                                     </a>
-                                    <a href="">
+                                    <a href="{{ route('pembayaran.proses', ['no_invoice' => $pembayaran->no_invoice]) }}">
                                         <button type="button" class="btn btn-sm btn-info">Proses</button>
                                     </a>
-                                    <a href="">
+                                    <a href="{{ route('pembayaran.verifikasi', ['no_invoice' => $pembayaran->no_invoice]) }}">
                                         <button type="button" class="btn btn-sm btn-info">Verifikasi</button>
                                     </a>
                                     <a href="" onclick="return confirm('Delete data?');">
