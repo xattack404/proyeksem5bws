@@ -71,6 +71,23 @@
                 <input id="kodepos" name="kode_pos" required type="number" placeholder="Isi Data">
             </div>
         </div>
+        <div class="form-kategori"> 
+                <div class="judulkategori">
+                    <h1>Biaya Kebutuhan Santri</h1>
+                </div>
+                <div class="form-group">
+                    <label for="desa">Biaya Seragam</label>
+                    <input id="biaya1" name="biaya1" required type="text" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="desa">Biaya Kitab</label>
+                    <input id="biaya2" name="biaya2" required type="text" readonly>
+                </div>
+        </div>        
+    </div>
+
+
+    <div class="form-box">
         <div class="form-kategori">
             <div class="judulkategori">
                 <h1>Data Sekolah Sebelumm</h1>
@@ -98,10 +115,6 @@
                 *ukuran file maksimal 3MB
             </div>
         </div>
-    </div>
-
-
-    <div class="form-box">
         <div class="form-kategori">
             <div class="judulkategori">
                 <h1>Kartu Keluarga</h1>
@@ -179,19 +192,6 @@
                     <option value="Ibu Rumah Tangga">Ibu Rumah Tangga</option>
                     <option value="Tidak memiliki pekerjaan tetap">Tidak memiliki pekerjaan</option>
                 </select>
-            </div>
-            <div class="form-kategori">
-                <div class="judulkategori">
-                    <h1>Biaya Kebutuhan Santri</h1>
-                </div>
-                <div class="form-group">
-                    <label for="desa">Biaya Seragam</label>
-                    <input id="biaya1" name="biaya1" required type="text" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="desa">Biaya Kitab</label>
-                    <input id="biaya2" name="biaya2" required type="text" readonly>
-                </div>
             </div>
             <div class="form-group">
                 <!-- <button type="submit" class="button green">Kirim</button> -->
