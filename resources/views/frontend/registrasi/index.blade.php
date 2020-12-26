@@ -73,7 +73,7 @@
         </div>
         <div class="form-kategori">
             <div class="judulkategori">
-                <h1>Data Sekolah Sebelum</h1>
+                <h1>Data Sekolah Sebelumm</h1>
             </div>
             <div class="form-group">
                 <label for="jenjangpend">Pendidikan Terakhir</label>
@@ -200,7 +200,7 @@
             </div>
         </div>
     </div>
-    <scrip src="{{ asset('assets_frontend/js/jquery-3.4.1.min.js') }}">
+    <scrip src="{{ asset('js/jquery-3.5.1.min.js') }}">
         </script>
         <script type="text/javascript">
             $(document).ready(function() {
