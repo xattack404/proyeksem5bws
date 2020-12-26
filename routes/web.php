@@ -78,3 +78,11 @@ Route::post('panel/kontak/create', ['as' => 'kontak.store', 'uses' => 'KontakCon
 Route::get('panel/kontak/edit/{id}', ['as' => 'kontak.edit', 'uses' => 'KontakController@edit']);
 Route::put('panel/kontak/edit/{id}', ['as' => 'kontak.update', 'uses' => 'KontakController@update']);
 Route::get('panel/kontak/delete/{id}', ['as' => 'kontak.delete', 'uses' => 'KontakController@delete']);
+
+//Route Menu Artikel
+Route::get('panel/artikel', ['as' => 'artikel.index', 'uses' => 'ArtikelController@index']);
+Route::get('panel/artikel/create', ['as' => 'artikel.create', 'uses' => 'ArtikelController@create']);
+Route::post('panel/artikel/create', ['as' => 'artikel.store', 'uses' => 'ArtikelController@store']);
+Route::get('panel/artikel/edit/{id}', ['as' => 'artikel.edit', 'uses' => 'ArtikelController@edit']);
+Route::put('panel/artikel/edit/{id}', ['as' => 'artikel.update', 'uses' => 'ArtikelController@update']);
+Route::get('panel/artikel/delete/{id}', ['as' => 'artikel.delete', 'uses' => 'ArtikelController@delete']);
