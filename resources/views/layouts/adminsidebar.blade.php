@@ -10,9 +10,9 @@
       <li class="menu-header">Dashboard</li>
       <li class="">
         <a href="#" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-      <li class="menu-header">Data Pendaftaran</li>
+      <li class="menu-header">Data Santri</li>
       <li class="">
-        <a class="nav-link" href="#"><i class="fa fa-table" aria-hidden="true"></i> <span>Data Pendaftaran</span></a>
+        <a class="nav-link" href="{{ route('datasantri.index') }}"><i class="fa fa-table" aria-hidden="true"></i> <span>Data Santri Baru</span></a>
       </li>
       <li class="menu-header">Transaksi</li>
       <li class="">

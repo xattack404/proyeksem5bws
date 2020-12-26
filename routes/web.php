@@ -42,6 +42,9 @@ Route::get('panel/pembayaran/proses/{no_invoice}', ['as' => 'pembayaran.proses',
 Route::get('panel/pembayaran/verifikasi/{no_invoice}', ['as' => 'pembayaran.verifikasi', 'uses' => 'PembayaranController@verifikasi']);
 Route::get('panel/pembayaran/tolak/{no_invoice}', ['as' => 'pembayaran.tolak', 'uses' => 'PembayaranController@tolak']);
 
+//Data Santri baru
+Route::get('panel/datasantri', ['as' => 'datasantri.index', 'uses' => 'DatasantriController@index']);
+
 
 //Route Menu Kategori
 Route::get('panel/kategori', ['as' => 'kategori.index', 'uses' => 'KategoriController@index']);

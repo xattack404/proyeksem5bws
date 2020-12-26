@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\BiayaPendaftaran;
+use App\DetailRegistrasi;
 
 class Registrasi extends Model
 {
@@ -32,5 +33,9 @@ class Registrasi extends Model
     public function jejang()
     {
         return $this->belongsTo(BiayaPendaftaran::class, 'pendidikan_terakhir');
+    }
+    public function relasidetail()
+    {
+        return $this->hasOne(DetailRegistrasi::class, 'id_registrasi', 'id');
     }
 }

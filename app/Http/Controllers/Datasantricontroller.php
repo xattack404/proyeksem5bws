@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Pembayaran;
 use App\santriaktif;
+use App\Registrasi;
+use App\DetailRegistrasi;
 
-class PembayaranController extends Controller
+class Datasantricontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,38 +16,11 @@ class PembayaranController extends Controller
      */
     public function index()
     {
-        $data = Pembayaran::paginate(5);
-        return view('pembayaran.index', compact('data'));
+        $data['santri_aktif'] =  santriaktif::paginate(5);
+        $data['registrasi']   =  Registrasi::paginate(5);
+        return view('datasantri.index', compact('data'));
     }
 
-    public function proses($no_invoice)
-    {
-        Pembayaran::where('no_invoice', $no_invoice)->update([
-            'status' => 'Proses'
-
-        ]);
-        return redirect()->route('pembayaran.index');
-    }
-
-    public function verifikasi($nisn)
-    {
-        $getId = Pembayaran::where('nisn', $nisn)->update([
-            'status' => 'Verifikasi'
-
-        ]);
-        santriaktif::create([
-            'nisn_santri' => $nisn
-        ]);
-        return redirect()->route('pembayaran.index');
-    }
-    public function tolak($no_invoice)
-    {
-        Pembayaran::where('no_invoice', $no_invoice)->update([
-            'status' => 'Ditolak'
-
-        ]);
-        return redirect()->route('pembayaran.index');
-    }
     /**
      * Show the form for creating a new resource.
      *

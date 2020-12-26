@@ -55,7 +55,7 @@
                                     </a>
                                     @endif
                                     @if($pembayaran->status == 'Proses')
-                                    <a href="{{ route('pembayaran.verifikasi', ['no_invoice' => $pembayaran->no_invoice]) }}" onclick="return confirm('Apakah Data akan di Verifikasi? Pastikan Berkas sudah benar');">
+                                    <a href="{{ route('pembayaran.verifikasi', ['nisn' => $pembayaran->nisn]) }}" onclick="return confirm('Apakah Data akan di Verifikasi? Pastikan Berkas sudah benar');">
                                         <button type="button" class="btn btn-sm btn-info">Verifikasi</button>
                                     </a>
                                     @endif
