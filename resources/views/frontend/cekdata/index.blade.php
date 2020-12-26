@@ -20,7 +20,7 @@
             <label for="nama">Masukan nomor pendaftaran yang masuk ke alamat email yang anda daftarkan</label>
             <input id="nisn" name="nisn" type="text" placeholder="Masukan No Pendaftaran Anda">
             <a href="#popup2" onclick="LoadData()" class="button green" target="">Cek Data Pendaftaran</a>
-            <a href="registrasi.php" class="button blue">Belum Daftar</a>
+            <a href="{{ route('frontend.registrasi.index')}}" class="button blue">Belum Daftar</a>
         </div>
     </form>
 
@@ -34,10 +34,10 @@
     </form>
 
 
-    <div id="popup2">
-        <div class="popup-bg2">
-        </div>
-    </div>
+    <form id="popup2" action="{{ route('frontend.cekdata.submit') }}" enctype="multipart/form-data" method="POST">
+    </form>
+
+
     <script src="{{ asset('/js/jquery-3.5.1.min.js') }}"></script>
     <script>
         function printDiv(divName) {

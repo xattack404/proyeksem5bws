@@ -19,8 +19,9 @@ Route::get('ajax/{id}', ['as' => 'frontend.registrasi.ajax', 'uses' => 'Registra
 Route::get('news/detailnews/{url}', ['as' => 'frontend.home.detailnews', 'uses' => 'IndexController@detailnews']);
 Route::get('cekdata/index', ['as' => 'frontend.cekdata.index', 'uses' => 'CekdataController@index']);
 Route::get('cekdata/form/{nisn}', ['as' => 'frontend.cekdata.form', 'uses' => 'CekdataController@form']);
-Route::put('cekdata/sumbit/{nisn}', ['as' => 'frontend.cekdata.submit', 'uses' => 'CekdataController@update']);
+Route::put('cekdata/sumbit', ['as' => 'frontend.cekdata.submit', 'uses' => 'CekdataController@update']);
 Route::get('pengurus/index', ['as' => 'frontend.pengurus.index', 'uses' => 'ProfilPengurusController@index']);
+Route::get('cekdata/print/{nisn}', ['as' => 'frontend.cekdata.print', 'uses' => 'CekdataController@print']);
 
 
 Auth::routes();
@@ -78,3 +79,11 @@ Route::post('panel/kontak/create', ['as' => 'kontak.store', 'uses' => 'KontakCon
 Route::get('panel/kontak/edit/{id}', ['as' => 'kontak.edit', 'uses' => 'KontakController@edit']);
 Route::put('panel/kontak/edit/{id}', ['as' => 'kontak.update', 'uses' => 'KontakController@update']);
 Route::get('panel/kontak/delete/{id}', ['as' => 'kontak.delete', 'uses' => 'KontakController@delete']);
+
+//Route Menu Artikel
+Route::get('panel/artikel', ['as' => 'artikel.index', 'uses' => 'ArtikelController@index']);
+Route::get('panel/artikel/create', ['as' => 'artikel.create', 'uses' => 'ArtikelController@create']);
+Route::post('panel/artikel/create', ['as' => 'artikel.store', 'uses' => 'ArtikelController@store']);
+Route::get('panel/artikel/edit/{id}', ['as' => 'artikel.edit', 'uses' => 'ArtikelController@edit']);
+Route::put('panel/artikel/edit/{id}', ['as' => 'artikel.update', 'uses' => 'ArtikelController@update']);
+Route::get('panel/artikel/delete/{id}', ['as' => 'artikel.delete', 'uses' => 'ArtikelController@delete']);

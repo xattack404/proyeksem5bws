@@ -25,9 +25,10 @@ class CekdataController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function print($nisn)
     {
-        //
+        $data = Pembayaran::where('nisn', $nisn)->first();
+        return view('frontend.cekdata.print', compact('data'));
     }
 
     /**
@@ -48,11 +49,11 @@ class CekdataController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $nisn)
+    public function update(Request $request)
     {
         $fileName = 'buktibyr-' . date('Ymdhis') . '.' . $request->foto->getClientOriginalExtension();
         $request->foto->move('buktipembayaran/', $fileName);
-        Pembayaran::whereNisn($nisn)->update([
+        Pembayaran::whereNisn($request->nisn)->update([
             'bukti_pembayaran' => $fileName
         ]);
         return redirect()->route('frontend.cekdata.index');
