@@ -15,7 +15,7 @@
         <input type="checkbox" name="" id="ribbon">
         <ul>
             <li><a href="tentangpondok.php">Tentang Al-Djaliel</a></li>
-            <li><a href="profilpengurus.php">Profil Pengurus</a></li>
+            <li><a href="{{ route('frontend.pengurus.index')}}">Profil Pengurus</a></li>
             <li><a href="pembelajaransantri.php">Pembelajaran Santri</a></li>
             <li><a href="{{ route('frontend.registrasi.index')}}">Pendaftaran Santri Baru</a></li>
             <li><a href="{{ route('frontend.cekdata.index')}}">Cek Data Pendaftar</a></li>

@@ -20,6 +20,7 @@ Route::get('news/detailnews/{url}', ['as' => 'frontend.home.detailnews', 'uses' 
 Route::get('cekdata/index', ['as' => 'frontend.cekdata.index', 'uses' => 'CekdataController@index']);
 Route::get('cekdata/form/{nisn}', ['as' => 'frontend.cekdata.form', 'uses' => 'CekdataController@form']);
 Route::put('cekdata/sumbit/{nisn}', ['as' => 'frontend.cekdata.submit', 'uses' => 'CekdataController@update']);
+Route::get('pengurus/index', ['as' => 'frontend.pengurus.index', 'uses' => 'ProfilPengurusController@index']);
 
 
 Auth::routes();
