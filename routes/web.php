@@ -19,8 +19,9 @@ Route::get('ajax/{id}', ['as' => 'frontend.registrasi.ajax', 'uses' => 'Registra
 Route::get('news/detailnews/{url}', ['as' => 'frontend.home.detailnews', 'uses' => 'IndexController@detailnews']);
 Route::get('cekdata/index', ['as' => 'frontend.cekdata.index', 'uses' => 'CekdataController@index']);
 Route::get('cekdata/form/{nisn}', ['as' => 'frontend.cekdata.form', 'uses' => 'CekdataController@form']);
-Route::put('cekdata/sumbit/{nisn}', ['as' => 'frontend.cekdata.submit', 'uses' => 'CekdataController@update']);
+Route::put('cekdata/sumbit', ['as' => 'frontend.cekdata.submit', 'uses' => 'CekdataController@update']);
 Route::get('pengurus/index', ['as' => 'frontend.pengurus.index', 'uses' => 'ProfilPengurusController@index']);
+Route::get('cekdata/print/{nisn}', ['as' => 'frontend.cekdata.print', 'uses' => 'CekdataController@print']);
 
 
 Auth::routes();

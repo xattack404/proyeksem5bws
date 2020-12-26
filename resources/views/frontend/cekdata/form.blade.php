@@ -1,5 +1,6 @@
-<form id="popup2" action="{{ route('frontend.cekdata.submit', ['nisn' => $data->nisn]) }}" enctype="multipart/form-data" method="POST">
+<form id="popup3" action="{{ route('frontend.cekdata.submit', ['nisn' => $data->nisn]) }}" enctype="multipart/form-data" method="POST">
     <input type="hidden" name="_method" value="PUT">
+    <input type="hidden" name="nisn" value="{{ $data->nisn }}">
     @csrf
     <div class="popup-bg2">
         <h1>
@@ -99,8 +100,13 @@
                     *ukuran file maksimal 3MB
                 </div>
                 <div class="form-group">
+                    @if($data->status == 'Pending' or $data->status == 'Proses')
                     <button type="submit" class="button green">Simpan</button>
-                    <a href="print.php" class="button blue" target="_blank">Cetak Data Pendaftaran</a>
+                    @endif
+
+                    @if($data->status == 'Verifikasi')
+                    <a href="{{ route('frontend.cekdata.print', ['nisn' => $data->nisn]) }}" class="button blue" target="_blank">Cetak Data Pendaftaran</a>
+                    @endif
                     <a href="#" class="button red">tutup</a>
                 </div>
             </div>

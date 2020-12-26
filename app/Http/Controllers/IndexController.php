@@ -14,7 +14,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $data = Berita::paginate(3);
+        $data = Berita::orderBy('id', 'desc')->paginate(1);
         return view('frontend.home.index', compact('data'));
     }
     public function news()
