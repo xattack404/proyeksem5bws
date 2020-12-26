@@ -71,7 +71,7 @@
                 <input id="kodepos" name="kode_pos" required type="number" placeholder="Isi Data">
             </div>
         </div>
-        <div class="form-kategori">
+        <div class="form-kategori"> 
                 <div class="judulkategori">
                     <h1>Biaya Kebutuhan Santri</h1>
                 </div>
@@ -83,12 +83,12 @@
                     <label for="desa">Biaya Kitab</label>
                     <input id="biaya2" name="biaya2" required type="text" readonly>
                 </div>
-            </div>
+        </div>        
     </div>
 
 
     <div class="form-box">
-    <div class="form-kategori">
+        <div class="form-kategori">
             <div class="judulkategori">
                 <h1>Data Sekolah Sebelum</h1>
             </div>
@@ -114,7 +114,7 @@
                 <input id="ijazah" name="scan_ijazah" type="file" placeholder="Isi Data">
                 *ukuran file maksimal 3MB
             </div>
-        </div>        
+        </div>
         <div class="form-kategori">
             <div class="judulkategori">
                 <h1>Kartu Keluarga</h1>
