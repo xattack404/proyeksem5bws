@@ -34,6 +34,9 @@
       <li class="">
         <a class="nav-link" href="{{ route('kontak.index') }}"><i class="fas fa-newspaper"></i> <span>Kontak</span></a>
       </li>
+      <li class="">
+        <a class="nav-link" href="{{ route('artikel.index') }}"><i class="fas fa-newspaper"></i> <span>Artikel</span></a>
+      </li>
       </li>
     </ul>
   </aside>
