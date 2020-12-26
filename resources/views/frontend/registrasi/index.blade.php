@@ -97,38 +97,11 @@
                 <input id="ijazah" name="scan_ijazah" type="file" placeholder="Isi Data">
                 *ukuran file maksimal 3MB
             </div>
-        </div>        
+        </div>
     </div>
 
 
     <div class="form-box">
-        <div class="form-kategori">
-            <div class="judulkategori">
-                <h1>Data Sekolah Sebelum</h1>
-            </div>
-            <div class="form-group">
-                <label for="jenjangpend">Pendidikan Terakhir</label>
-                <select name="pend_ter" id="jenjangpend">
-                    <option value="">--Pilih Satu-- </option>
-                    @foreach($data as $jepend)
-                    <option value="{{ $jepend->id }}">{{ $jepend->jejang_didik }} </option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="lulus">Asal Sekolah</label>
-                <input id="lulus" name="asal_sekolah" type="text" placeholder="Isi Data">
-            </div>
-            <div class="form-group">
-                <label for="lulus">Tahun lulus</label>
-                <input id="lulus" name="thn_lulus" type="number" placeholder="Isi Data">
-            </div>
-            <div class="form-group">
-                <label for="ijazah">Scan Ijazah</label>
-                <input id="ijazah" name="scan_ijazah" type="file" placeholder="Isi Data">
-                *ukuran file maksimal 3MB
-            </div>
-        </div>         
         <div class="form-kategori">
             <div class="judulkategori">
                 <h1>Kartu Keluarga</h1>
@@ -207,7 +180,7 @@
                     <option value="Tidak memiliki pekerjaan tetap">Tidak memiliki pekerjaan</option>
                 </select>
             </div>
-            <div class="form-kategori"> 
+            <div class="form-kategori">
                 <div class="judulkategori">
                     <h1>Biaya Kebutuhan Santri</h1>
                 </div>
