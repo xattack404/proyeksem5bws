@@ -3012,8 +3012,17 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
   font-size: 20px;
   right: 10px;
   top: 10px;
-  color: red;
   text-decoration: none;
-  background-color: white;
   padding: 5px;
+  color: white;
+  background-color: red;
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
+}
+.popupcontent a:hover{
+  background-color: white;
+  color: red;
 }
