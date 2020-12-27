@@ -90,7 +90,7 @@
     <div class="form-box">
         <div class="form-kategori">
             <div class="judulkategori">
-                <h1>Data Sekolah Sebelumm</h1>
+                <h1>Data Sekolah Sebelum</h1>
             </div>
             <div class="form-group">
                 <label for="jenjangpend">Pendidikan Terakhir</label>

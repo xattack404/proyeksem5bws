@@ -45,7 +45,7 @@
                                 <td>{{ $santri->relasi->relasidetail->nama_ayah }}</td>
                                 <td>{{ $santri->relasi->alamat }}</td>
                                 <td>
-                                    <a href="">
+                                    <a href="#detaildatasantri">
                                         <button type="button" class="btn btn-sm btn-info">Detail</button>
 
                                 </td>
@@ -71,4 +71,131 @@
     </div>
 
 </section>
+<div id="detaildatasantri">  
+<div class="detailcontent">
+        <a href="#" class="tutup">close</a>
+        <h1 class="text-white">Informasi Pribadi</h1>
+        <table class="table table-bordered" border="1">
+            <thead class="bg-success text-white">
+                <tr>
+                    <td>Nama lengkap</td>
+                    <td>NISN</td>
+                    <td>Tempat Lahir</td>
+                    <td>Tanggal Lahir</td>
+                    <td>Nomor Telepon</td>
+                    <td>Email</td>
+                    <td>Upload Foto Pribadi</td>
+                </tr>
+            </thead>
+            <tbody class="bg-whitesmoke">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href=""><img src="" alt=""></a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        
+        <h1 class="text-white">Alamat Rumah</h1>
+        <table class="table table-bordered" border="1">
+            <thead class="bg-success text-white">
+                <tr>
+                    <td>Provinsi</td>
+                    <td>Kota/Kabupaten</td>
+                    <td>Kecamatan</td>
+                    <td>Alamat</td>
+                    <td>Kode Pos</td>
+                </tr>
+            </thead>
+            <tbody class="bg-whitesmoke">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h1 class="text-white">Data Sekolah Sebelum</h1>
+        <table class="table table-bordered" border="1">
+            <thead class="bg-success text-white">
+                <tr>
+                    <td>Pendidikan Terakhir</td>
+                    <td>Asal Sekolah</td>
+                    <td>Tahun lulus</td>
+                    <td>Scan Ijazah</td>
+                </tr>
+            </thead>
+            <tbody class="bg-whitesmoke">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href=""><img src="" alt=""></a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h1 class="text-white">Kartu Keluarga</h1>
+        <table class="table table-bordered" border="1">
+            <thead class="bg-success text-white">
+                <tr>
+                    <td>Nomor Kartu Keluarga</td>
+                    <td>NIK Kepala Keluarga</td>
+                    <td>Scan Kartu Keluarga</td>
+                </tr>
+            </thead>
+            <tbody class="bg-whitesmoke">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href=""><img src="" alt=""></a></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h1 class="text-white">Identitas Ayah Kandung</h1>
+        <table class="table table-bordered" border="1">
+            <thead class="bg-success text-white">
+                <tr>
+                    <td>Nama lengkap</td>
+                    <td>Status Hidup</td>
+                    <td>Pekerjaan</td>
+                </tr>
+            </thead>
+            <tbody class="bg-whitesmoke">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h1 class="text-white">Identitas Ibu Kandung</h1>
+        <table class="table table-bordered" border="1">
+            <thead class="bg-success text-white">
+                <tr>
+                    <td>Nama lengkap</td>
+                    <td>Status Hidup</td>
+                    <td>Pekerjaan</td>
+                </tr>
+            </thead>
+            <tbody class="bg-whitesmoke">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 @endsection()
