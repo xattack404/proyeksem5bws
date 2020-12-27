@@ -42,8 +42,8 @@
                             <tr>
                                 <td>{{ $pembayaran->no_invoice }}</td>
                                 <td>{{ $pembayaran->total_pembayaran }}</td>
-                                <td><img src="{{ asset('buktipembayaran/'. $pembayaran->bukti_pembayaran) }}" width='75' height='75'></td>
-                                <td><img src="{{ asset('scn_ijz/'. $pembayaran->registrasi->file_ijazah) }}" width='75' height='75'></td>
+                                <td><a href="#popupbuktibayar"><img src="{{ asset('buktipembayaran/'. $pembayaran->bukti_pembayaran) }}" width='75' height='75'></a></td>
+                                <td><a href="#popupscanijazah"><img src="{{ asset('scn_ijz/'. $pembayaran->registrasi->file_ijazah) }}" width='75' height='75'></a></td>
                                 <td>{{ $pembayaran->status }}</td>
                                 <td>
                                     <a href="">
@@ -86,4 +86,17 @@
     </div>
 
 </section>
+<div id="popupbuktibayar">
+    <div class="popupcontent">
+        <a href="#">close</a>
+        <img src="{{ asset('buktipembayaran/'. $pembayaran->bukti_pembayaran) }}" width='' height=''>
+    </div>
+</div>
+
+<div id="popupscanijazah">
+    <div class="popupcontent">
+        <a href="#">close</a>
+        <img src="{{ asset('scn_ijz/'. $pembayaran->registrasi->file_ijazah) }}" width='75' height='75'>
+    </div>
+</div>
 @endsection()
