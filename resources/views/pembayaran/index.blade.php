@@ -88,14 +88,14 @@
 </section>
 <div id="popupbuktibayar">
     <div class="popupcontent">
-        <a href="#">close</a>
+        <a class="tutup" href="#">close</a>
         <img src="{{ asset('buktipembayaran/'. $pembayaran->bukti_pembayaran) }}" width='' height=''>
     </div>
 </div>
 
 <div id="popupscanijazah">
     <div class="popupcontent">
-        <a href="#">close</a>
+        <a class="tutup" href="#">close</a>
         <img src="{{ asset('scn_ijz/'. $pembayaran->registrasi->file_ijazah) }}" width='75' height='75'>
     </div>
 </div>
