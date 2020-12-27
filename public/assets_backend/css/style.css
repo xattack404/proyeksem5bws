@@ -3013,7 +3013,8 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
   right: 10px;
   top: 10px;
   text-decoration: none;
-  padding: 5px;
+  padding: 0 5px 0 5px;
+  border-radius: 3px;
   color: white;
   background-color: red;
   transition: .3s;
@@ -3021,6 +3022,10 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
   -moz-transition: .3s;
   -ms-transition: .3s;
   -o-transition: .3s;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
 }
 .popupcontent a:hover{
   background-color: white;
