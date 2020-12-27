@@ -71,19 +71,19 @@
                 <input id="kodepos" name="kode_pos" required type="number" placeholder="Isi Data">
             </div>
         </div>
-        <div class="form-kategori"> 
-                <div class="judulkategori">
-                    <h1>Biaya Kebutuhan Santri</h1>
-                </div>
-                <div class="form-group">
-                    <label for="desa">Biaya Seragam</label>
-                    <input id="biaya1" name="biaya1" required type="text" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="desa">Biaya Kitab</label>
-                    <input id="biaya2" name="biaya2" required type="text" readonly>
-                </div>
-        </div>        
+        <div class="form-kategori">
+            <div class="judulkategori">
+                <h1>Biaya Kebutuhan Santri</h1>
+            </div>
+            <div class="form-group">
+                <label for="desa">Biaya Seragam</label>
+                <input id="biaya1" name="biaya1" required type="text" readonly>
+            </div>
+            <div class="form-group">
+                <label for="desa">Biaya Kitab</label>
+                <input id="biaya2" name="biaya2" required type="text" readonly>
+            </div>
+        </div>
     </div>
 
 
@@ -200,31 +200,31 @@
             </div>
         </div>
     </div>
-    <scrip src="{{ asset('js/jquery-3.5.1.min.js') }}">
-        </script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $('select[name="pend_ter"]').on('change', function() {
-                    var getID = $(this).val();
-                    if (getID) {
-                        $.ajax({
-                            url: "{{ url('ajax') }}/" + getID,
-                            type: "GET",
-                            dataType: "json",
-                            success: function(data) {
-                                $('input[name="biaya1"]').empty();
-                                $.each(data, function(key, value) {
-                                    $('input[name="biaya1"]').val('' + value.harga_seragam + '');
-                                    $('input[name="biaya2"]').val('' + value.harga_kitab + '');
-                                });
-                            }
-                        });
-                    } else {
-                        $('select[name="biaya1"]').empty();
-                    }
-                });
+    <script src="{{ asset('js/jquery-3.5.1.min.js') }}">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('select[name="pend_ter"]').on('change', function() {
+                var getID = $(this).val();
+                if (getID) {
+                    $.ajax({
+                        url: "{{ url('ajax') }}/" + getID,
+                        type: "GET",
+                        dataType: "json",
+                        success: function(data) {
+                            $('input[name="biaya1"]').empty();
+                            $.each(data, function(key, value) {
+                                $('input[name="biaya1"]').val('' + value.harga_seragam + '');
+                                $('input[name="biaya2"]').val('' + value.harga_kitab + '');
+                            });
+                        }
+                    });
+                } else {
+                    $('select[name="biaya1"]').empty();
+                }
             });
-        </script>
+        });
+    </script>
 </form>
 
 
