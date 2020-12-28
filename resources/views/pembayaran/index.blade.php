@@ -86,7 +86,7 @@
     </div>
 
 </section>
-<div id="popupbuktibayar">
+<!-- <div id="popupbuktibayar">
     <div class="popupcontent">
         <a class="tutup" href="#">close</a>
         <img src="{{ asset('buktipembayaran/'. $pembayaran->bukti_pembayaran) }}" width='' height=''>
@@ -98,5 +98,5 @@
         <a class="tutup" href="#">close</a>
         <img src="{{ asset('scn_ijz/'. $pembayaran->registrasi->file_ijazah) }}" width='75' height='75'>
     </div>
-</div>
+</div> -->
 @endsection()

@@ -2976,7 +2976,7 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
 
     
 /* ========= styel sendiri ============ */
-
+/* 
 #popupbuktibayar, #popupscanijazah{
   display: block;
   width: 0px;
@@ -2997,16 +2997,15 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
   width: 600px;
   min-height: 600px;
   overflow: auto;
-}
-.popupcontent{
-  width: 600px;
-  min-height: 600px;
-}
-.popupcontent img{
+} */
+tr td img:hover{
+  position: absolute;
   display: block;
-  width: 100%;
+  width: 600px;
   height: auto;
-  background-color: ;
+  z-index: 999999;
+  left: 50%;
+  top: 50%;
 }
 
 #detaildatasantri{
@@ -3046,7 +3045,6 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
   top: 10px;
   text-decoration: none;
   padding: 0 5px 0 5px;
-  border-radius: 3px;
   color: white;
   background-color: red;
   transition: .3s;
@@ -3054,6 +3052,7 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
   -moz-transition: .3s;
   -ms-transition: .3s;
   -o-transition: .3s;
+  border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
