@@ -1,5 +1,6 @@
 @include('layouts.FrontendNavbar')
 <!-- Navbar End -->
+<body class="bg-registrasi2">
 <form action="{{ route('frontend.registrasi.store') }}" class="registrasi" id="registrasi" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="form-box">
