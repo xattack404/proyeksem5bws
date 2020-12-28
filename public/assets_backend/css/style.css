@@ -2976,10 +2976,7 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
 
     
 /* ========= styel sendiri ============ */
-tbody tr td a{
-  display: block;
-  background-color: blue;
-}
+
 #popupbuktibayar, #popupscanijazah{
   display: block;
   width: 0px;
