@@ -2998,6 +2998,9 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
   min-height: 600px;
   overflow: auto;
 } */
+tr td img{
+  cursor: pointer;
+}
 tr td img:hover{
   position: absolute;
   display: block;
