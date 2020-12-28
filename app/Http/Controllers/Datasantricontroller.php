@@ -20,7 +20,13 @@ class Datasantricontroller extends Controller
         $data['registrasi']   =  Registrasi::paginate(5);
         return view('datasantri.index', compact('data'));
     }
+    public function form($nisn_santri)
+    {
+        $data['santri_aktif'] = santriaktif::where('nisn_santri', $nisn_santri)->first();
+        $data['registrasi'] = Registrasi::all();
 
+        return view('datasantri.form', compact('data'));
+    }
     /**
      * Show the form for creating a new resource.
      *
