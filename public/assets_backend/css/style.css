@@ -2998,17 +2998,25 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
   min-height: 600px;
   overflow: auto;
 } */
-tr td img{
+.gambartabel{
+  position: relative;
+  padding: 2px;
+}
+.gambartabel img{
   cursor: pointer;
 }
-tr td img:hover{
+.gambartabel img:hover{
   position: absolute;
   display: block;
-  width: 600px;
   height: auto;
   z-index: 999999;
   left: 50%;
   top: 50%;
+  transform: scale(10);
+  -webkit-transform: scale(10);
+  -moz-transform: scale(10);
+  -ms-transform: scale(10);
+  -o-transform: scale(10);
 }
 
 #detaildatasantri{
