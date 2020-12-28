@@ -46,6 +46,7 @@ Route::get('panel/pembayaran/tolak/{no_invoice}', ['as' => 'pembayaran.tolak', '
 
 //Data Santri baru
 Route::get('panel/datasantri', ['as' => 'datasantri.index', 'uses' => 'DatasantriController@index']);
+Route::get('panel/datasantri/form/{nisn_santri}', ['as' => 'datasantri.form', 'uses' => 'DatasantriController@form']);
 
 
 //Route Menu Kategori

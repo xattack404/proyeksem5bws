@@ -46,7 +46,7 @@
                                 <td>{{ $santri->relasi->alamat }}</td>
                                 <td>
                                     <a href="#detaildatasantri">
-                                        <button type="button" class="btn btn-sm btn-info">Detail</button>
+                                        <button type="button" onclick="LoadData('{{ $santri->nisn_santri }}')" class="btn btn-sm btn-info">Detail</button>
 
                                 </td>
 
@@ -71,8 +71,8 @@
     </div>
 
 </section>
-<div id="detaildatasantri">  
-<div class="detailcontent">
+<div id="detaildatasantri">
+    <div class="detailcontent">
         <a href="#" class="tutup">close</a>
         <h1 class="text-white">Informasi Pribadi</h1>
         <table class="table table-bordered" border="1">
@@ -89,18 +89,18 @@
             </thead>
             <tbody class="bg-whitesmoke">
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
                     <td><a href=""><img src="" alt=""></a></td>
                 </tr>
             </tbody>
         </table>
 
-        
+
         <h1 class="text-white">Alamat Rumah</h1>
         <table class="table table-bordered" border="1">
             <thead class="bg-success text-white">
@@ -135,10 +135,10 @@
             </thead>
             <tbody class="bg-whitesmoke">
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a href=""><img src="" alt=""></a></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-<a href=""><img src="" alt=""></a></td>
                 </tr>
             </tbody>
         </table>
@@ -154,13 +154,13 @@
             </thead>
             <tbody class="bg-whitesmoke">
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td><a href=""><img src="" alt=""></a></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-<a href=""><img src="" alt=""></a></td>
                 </tr>
             </tbody>
         </table>
-        
+
         <h1 class="text-white">Identitas Ayah Kandung</h1>
         <table class="table table-bordered" border="1">
             <thead class="bg-success text-white">
@@ -172,13 +172,13 @@
             </thead>
             <tbody class="bg-whitesmoke">
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
                 </tr>
             </tbody>
         </table>
-        
+
         <h1 class="text-white">Identitas Ibu Kandung</h1>
         <table class="table table-bordered" border="1">
             <thead class="bg-success text-white">
@@ -190,12 +190,24 @@
             </thead>
             <tbody class="bg-whitesmoke">
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
                 </tr>
             </tbody>
         </table>
+        <script src="{{ asset('/js/jquery-3.5.1.min.js') }}"></script>
+        <script type="text/javascript">
+            function LoadData(nisn_santri) {
+                $.ajax({
+                    url: "{{ url('panel/datasantri/form/') }}/" + nisn_santri,
+                    type: "GET",
+                    success: function(data) {
+                        $('#detaildatasantri').html(data);
+                    }
+                });
+            }
+        </script>
     </div>
 </div>
 @endsection()
