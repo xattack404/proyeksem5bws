@@ -2976,23 +2976,30 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
 
     
 /* ========= styel sendiri ============ */
+tbody tr td a{
+  display: block;
+  background-color: blue;
+}
 #popupbuktibayar, #popupscanijazah{
-  width: 600px;
-  min-height: 600px;
+  display: block;
+  width: 0px;
+  min-height: 0px;
   position: absolute;
   top: 70px;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 999999999999999;
-  scale: 0;
   padding-top:70px ;
   transition: .3s;
   -webkit-transition: .3s;
   -moz-transition: .3s;
   -ms-transition: .3s;
   -o-transition: .3s;
+  overflow: hidden;
 }
 #popupbuktibayar:target, #popupscanijazah:target{
-  scale: 1;
+  width: 600px;
+  min-height: 600px;
+  overflow: auto;
 }
 .popupcontent{
   width: 600px;
@@ -3006,22 +3013,27 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
 }
 
 #detaildatasantri{
-  min-width: 1000px;
-  min-height: 600px;
+  display: block;
+  width: 0px;
+  height: 0px;
   position: absolute;
   top: 70px;
   padding-top: 70px;
   background-color: rgb(115, 115, 226);
   z-index: 999999999999999;
-  scale: 0;
   transition: .3s;
   -webkit-transition: .3s;
   -moz-transition: .3s;
   -ms-transition: .3s;
   -o-transition: .3s;
+  overflow: hidden;
 }
 #detaildatasantri:target{
-  scale: 1;
+  width: 80%;
+  height: 600px;
+  min-width: 80%;
+  min-height: 600px;
+  overflow: auto;
 }
 .detailcontent{
   min-width: 1000px;
