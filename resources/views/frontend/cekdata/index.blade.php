@@ -7,6 +7,7 @@
     <link rel="icon" type="img/png" href="{{ asset('assets_frontend/IMG/Logo.png') }}">
     <title>Al-Djaliel</title>
     <link rel="stylesheet" href="{{ asset('assets_frontend/CSS/style.css') }}">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <script src="{{ asset('assets_frontend/JS/pagination.js') }}"></script>
 </head>
 
@@ -26,15 +27,16 @@
 
 
     <form action="" id="popup">
+        
+    </form>
+
+
+    <form id="popup2" action="{{ route('frontend.cekdata.submit') }}" enctype="multipart/form-data" method="POST">
         <div class="popup-bg">
             <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
             <h1>Data dan Berkas Dalam Proses Pengecekan <br> Silahkan Cek Kembali dalam 1 x 24 Jam</h1>
             <a href="#" class="btn-popup red">Tutup</a>
         </div>
-    </form>
-
-
-    <form id="popup2" action="{{ route('frontend.cekdata.submit') }}" enctype="multipart/form-data" method="POST">
     </form>
 
 
