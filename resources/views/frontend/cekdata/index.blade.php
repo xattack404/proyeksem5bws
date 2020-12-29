@@ -27,7 +27,11 @@
 
 
     <form action="" id="popup">
-        
+        <div class="popup-bg">
+            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+            <h1>Data dan Berkas Dalam Proses Pengecekan <br> Silahkan Cek Kembali dalam 1 x 24 Jam</h1>
+            <a href="#" class="btn-popup red">Tutup</a>
+        </div>
     </form>
 
 
