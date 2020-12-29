@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Artikel;
 use App\Berita;
 use Illuminate\Http\Request;
 
@@ -14,15 +15,19 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $data = Berita::orderBy('id', 'desc')->paginate(1);
+        $data = Artikel::orderBy('id', 'desc')->paginate(1);
         return view('frontend.home.index', compact('data'));
     }
     public function news()
     {
-        $data = Berita::paginate(1);
+        dd($data = Berita::orderBy('id', 'desc')->paginate(1));
         return view('frontend.home.news', compact('data'));
     }
-
+    public function artikel($seo)
+    {
+        $data = Artikel::where('seo', $seo)->first();
+        return view('frontend.home.artikel', compact('data'));
+    }
     /**
      * Show the form for creating a new resource.
      *

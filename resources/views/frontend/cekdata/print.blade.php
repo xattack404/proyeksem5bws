@@ -25,9 +25,11 @@
                 <p><span>Jenis Kelamin</span> <span>:</span><span>{{ $data->registrasi->jenis_kelamin }}</span></p>
                 <p><span>Jenjang Pendidikan Terakhir</span> <span>:</span><span>{{ $data->registrasi->jejang->jejang_didik }}</span></p>
                 <p><span>Tahun Lulus</span> <span>:</span><span>{{ $data->registrasi->tahun_lulus }}</span></p>
+                <p></p>
+                <p>*Silahkan Datang Ke Pondok Pesantren Al-Djaliel Jenggawah Jember, dengan membawa bukti pendaftaran dan berkas lainnya</p>
             </div>
             <div class="form-bio">
-                <td><img src="{{ asset('foto_santri/'. $data->registrasi->foto) }}" width='75' height='150'></td>
+                <td><img src="{{ asset('foto_santri/'. $data->registrasi->foto) }}" width='75' height='170'></td>
                 <div class="tandatangan">
                     <p>Tanda Tangan Santri</p>
                     <br><br><br><br><br><br><br>

@@ -25,38 +25,34 @@
               <input type="text" name="judul" class="form-control" value="{{ $data->judul }}">
             </div>
             <div class="form-group">
-              <label>Seo</label>
-              <input type="text" name="seo" class="form-control" value="{{ $data->seo }}">
-            </div>
-            <div class="form-group">
-              <label>Isi</label>
-              <input type="text" name="isi" class="form-control" value="{{ $data->isi }}">
-            </div>
-            <div class="form-group">
-              <label>Gambar Sebelumnya</label><br />
-              <img src="{{ asset('img_artikel/'. $data->foto) }}" width='150' height='150'>
-            </div>
-            <div class="form-group">
-              <label>* Foto Baru</label> <br>
-              <input type="file" name="foto" id="foto" onchange="tampilkanPreview(this,'preview')" />
-            </div>
+              <div class="form-group">
+                <label>Isi Berita</label>
+                <textarea class="form-control" rows="10" id="isi" name="isi" style="min-height: 300px">{{ $data->isi }} </textarea>
+                <div class="form-group">
+                  <label>Gambar Sebelumnya</label><br />
+                  <img src="{{ asset('img_artikel/'. $data->gambar) }}" width='150' height='150'>
+                </div>
+                <div class="form-group">
+                  <label>* Foto Baru</label> <br>
+                  <input type="file" name="foto" id="foto" onchange="tampilkanPreview(this,'preview')" />
+                </div>
 
-            <div class="form-group">
-              <b>Preview Gambar</><br>
-                <img id="preview" src="" alt="" width="35%" />
-            </div>
-            <div class="form-group">
-              <label>Video</label>
-              <input type="text" name="video" class="form-control" value="{{ $data->video }}">
-            </div>
+                <div class="form-group">
+                  <b>Preview Gambar</><br>
+                    <img id="preview" src="" alt="" width="35%" />
+                </div>
+                <div class="form-group">
+                  <label>Video</label>
+                  <input type="text" name="video" class="form-control" value="{{ $data->video }}">
+                </div>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">SAVE</button>
+              </div>
+          </form>
         </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary">SAVE</button>
-        </div>
-        </form>
       </div>
     </div>
-  </div>
   </div>
 
   <script>

@@ -32,8 +32,6 @@
             <thead>
               <tr>
                 <th scope="col">Judul</th>
-                <th scope="col">Seo</th>
-                <th scope="col">Isi</th>
                 <th scope="col">Gambar</th>
                 <th scope="col">Video</th>
                 <th scope="col">Action</th>
@@ -43,9 +41,7 @@
               @forelse($data as $artikel)
               <tr>
                 <td>{{ $artikel->judul }}</td>
-                <td>{{ $artikel->seo }}</td>
-                <td>{{ $artikel->isi }}</td>
-                <td>{{ $artikel->gambar }}</td>
+                <td><img src="{{ asset('img_artikel/'. $artikel->gambar) }}" width='75' height='75'></td>
                 <td>{{ $artikel->video }}</td>
                 <td>
                   <a href="{{ route('artikel.edit', ['id' => $artikel->id]) }}">

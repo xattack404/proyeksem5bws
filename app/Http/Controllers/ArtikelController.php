@@ -40,7 +40,7 @@ class ArtikelController extends Controller
         $request->foto->move('img_artikel/', $fileName);
         Artikel::create([
             'judul'                  => $request->judul,
-            'seo'                    => $request->seo,
+            'seo'                    => strtolower(str_replace(" ", "-", $request->judul)),
             'isi'                    => $request->isi,
             'gambar'                 => $fileName,
             'video'                  => $request->video
@@ -83,7 +83,7 @@ class ArtikelController extends Controller
         if (empty($request->foto)) {
             Artikel::whereId($id)->update([
                 'judul'            => $request->judul,
-                'seo'              => $request->seo,
+                'seo'              => strtolower(str_replace(" ", "-", $request->judul)),
                 'isi'              => $request->isi,
                 'video'            => $request->video,
             ]);
@@ -93,7 +93,7 @@ class ArtikelController extends Controller
             $request->foto->move('img_artikel/', $fileName);
             Artikel::whereId($id)->update([
                 'judul'            => $request->judul,
-                'seo'              => $request->seo,
+                'seo'              => strtolower(str_replace(" ", "-", $request->judul)),
                 'isi'              => $request->isi,
                 'gambar'           => $fileName,
                 'video'            => $request->video

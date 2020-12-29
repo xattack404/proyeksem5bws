@@ -24,30 +24,25 @@
               <input type="text" name="judul" class="form-control">
             </div>
             <div class="form-group">
-              <label>Seo</label>
-              <input type="text" name="seo" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Isi</label>
-              <input type="text" name="isi" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>* Foto Baru</label> <br>
-              <input type="file" name="foto" id="foto" onchange="tampilkanPreview(this,'preview')" required />
-            </div>
+              <label>Isi Artikel</label>
+              <textarea class="form-control" rows="10" id="isi" name="isi" style="min-height: 300px"> </textarea>
+              <div class="form-group">
+                <label>* Foto Baru</label> <br>
+                <input type="file" name="foto" id="foto" onchange="tampilkanPreview(this,'preview')" required />
+              </div>
 
-            <div class="form-group">
-              <b>Preview Gambar</><br>
-                <img id="preview" src="" alt="" width="35%" />
-            </div>
+              <div class="form-group">
+                <b>Preview Gambar</><br>
+                  <img id="preview" src="" alt="" width="35%" />
+              </div>
 
-            <div class="form-group">
-              <label>Video</label>
-              <input type="text" name="video" class="form-control">
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary">SAVE</button>
-            </div>
+              <div class="form-group">
+                <label>Video</label>
+                <input type="text" name="video" class="form-control">
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">SAVE</button>
+              </div>
           </form>
         </div>
       </div>
