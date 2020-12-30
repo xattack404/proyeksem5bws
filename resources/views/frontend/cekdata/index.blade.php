@@ -7,7 +7,6 @@
     <link rel="icon" type="img/png" href="{{ asset('assets_frontend/IMG/Logo.png') }}">
     <title>Al-Djaliel</title>
     <link rel="stylesheet" href="{{ asset('assets_frontend/CSS/style.css') }}">
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <script src="{{ asset('assets_frontend/JS/pagination.js') }}"></script>
 </head>
 
@@ -18,8 +17,7 @@
     <!-- Navbar End -->
     <form action="" class="registrasi2">
         <div class="form-group2">
-            <label for="nama">Masukan nomor pendaftaran yang masuk ke alamat email yang anda daftarkan</label>
-            <input id="nisn" name="nisn" type="text" placeholder="Masukan No Pendaftaran Anda">
+            <input id="nisn" name="nisn" type="text" placeholder="Masukan No NISN Anda">
             <a href="#popup2" onclick="LoadData()" class="button green" target="">Cek Data Pendaftaran</a>
             <a href="{{ route('frontend.registrasi.index')}}" class="button blue">Belum Daftar</a>
         </div>

@@ -9,7 +9,6 @@ use App\Pembayaran;
 use App\Kategori;
 use App\BiayaPendaftaran;
 
-
 class RegistrasiController extends Controller
 {
     /**
@@ -45,6 +44,15 @@ class RegistrasiController extends Controller
         // $validatedData = $request->validate([
         //     'nisn' => 'required|max:10|unique:nisn',
         // ]);
+        $rules = [
+            'nisn' => 'required|max:20|unique:registrasi,nisn',
+        ];
+
+        $customMessages = [
+            'unique' => 'NISN Sudah Terdaftar.'
+        ];
+
+        $this->validate($request, $rules, $customMessages);
 
         $scan_ijazah = 'scnijz-' . date('Ymdhis') . '.' . $request->scan_ijazah->getClientOriginalExtension();
         $request->scan_ijazah->move('scn_ijz/', $scan_ijazah);
