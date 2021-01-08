@@ -30,15 +30,15 @@
             </div>
             <div class="form-group">
               <label>No Telepon</label>
-              <input type="text" name="no_telp" class="form-control" value="{{ $data->no_telp }}">
+              <input type="number" name="no_telp" class="form-control" value="{{ $data->no_telp }}">
             </div>
             <div class="form-group">
               <label>Email</label>
-              <input type="text" name="email" class="form-control" value="{{ $data->email }}">
+              <input type="email" name="email" class="form-control" value="{{ $data->email }}">
             </div>
             <div class="form-group">
               <label>Rekening</label>
-              <input type="text" name="rekening" class="form-control" value="{{ $data->rekening }}">
+              <input type="number" name="rekening" class="form-control" value="{{ $data->rekening }}">
             </div>
         </div>
         <div class="form-group">

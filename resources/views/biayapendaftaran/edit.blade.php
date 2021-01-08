@@ -26,11 +26,11 @@
             </div>
             <div class="form-group">
               <label>Harga Kitab</label>
-              <input type="text" name="harga_kitab" class="form-control" value="{{ $data->harga_kitab }}">
+              <input type="number" name="harga_kitab" class="form-control" value="{{ $data->harga_kitab }}">
             </div>
             <div class="form-group">
               <label>Harga Seragam</label>
-              <input type="text" name="harga_seragam" class="form-control" value="{{ $data->harga_seragam }}">
+              <input type="number" name="harga_seragam" class="form-control" value="{{ $data->harga_seragam }}">
             </div>
         </div>
         <div class="form-group">
