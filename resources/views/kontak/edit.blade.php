@@ -42,12 +42,11 @@
             </div>
             <div class="form-group">
               <label>Nama Bank</label>
-            
               <select id="nama_bank" name="nama_bank"  class="form-control" required>
                         <option value="{{ $data->nama_bank }}">--Tentukan Pilihan--</option>
-                        <option value="bca">bca</option>
-                        <option value="bri">bri</option>
-                        <option value="bni">bni</option>
+                        <option value="bca">BCA</option>
+                        <option value="bri">BRI</option>
+                        <option value="bni">BNI</option>
                     </select>
             </div>
         </div>

@@ -44,9 +44,9 @@
                     <label> Nama Bank</label>
                     <select id="nama_bank" name="nama_bank" class="form-control" required>
                         <option value="">--Tentukan Pilihan--</option>
-                        <option value="bca">bca</option>
-                        <option value="bri">bri</option>
-                        <option value="bni">bni</option>
+                        <option value="bca">BCA</option>
+                        <option value="bri">BRI</option>
+                        <option value="bni">BNI</option>
                     </select>
                 </div>
 
