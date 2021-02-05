@@ -40,6 +40,18 @@
               <label>Rekening</label>
               <input type="number" name="rekening" class="form-control">
             </div>
+              <div class="form-group">
+                    <label> Nama Bank</label>
+                    <select id="nama_bank" name="nama_bank" class="form-control" required>
+                        <option value="">--Tentukan Pilihan--</option>
+                        <option value="bca">bca</option>
+                        <option value="bri">bri</option>
+                        <option value="bni">bni</option>
+                    </select>
+                </div>
+
+               
+
             <div class="form-group">
               <button type="submit" class="btn btn-primary">SAVE</button>
             </div>

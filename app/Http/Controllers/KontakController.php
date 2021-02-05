@@ -41,7 +41,8 @@ class KontakController extends Controller
                 'alamat'           => $request->alamat,
                 'no_telp'          => $request->no_telp,
                 'email'            => $request->email,
-                'rekening'         => $request->rekening
+                'rekening'         => $request->rekening,
+                'nama_bank'        => $request->nama_bank
                 ]);    
         return redirect()->route('kontak.index');
     }
@@ -83,7 +84,8 @@ class KontakController extends Controller
             'alamat'           => $request->alamat,
             'no_telp'          => $request->no_telp,
             'email'            => $request->email,
-            'rekening'         => $request->rekening
+            'rekening'         => $request->rekening,
+            'nama_bank'         => $request->nama_bank
         ]);
         return redirect()->route('kontak.index');
     }

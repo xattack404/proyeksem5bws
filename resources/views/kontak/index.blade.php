@@ -36,6 +36,7 @@
                 <th scope="col">No Telepon</th>
                 <th scope="col">Email</th>
                 <th scope="col">Rekening</th>
+                <th scope="col">Nama Bank</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -47,6 +48,7 @@
                 <td>{{ $kontak->no_telp}}</td>
                 <td>{{ $kontak->email}}</td>
                 <td>{{ $kontak->rekening}}</td>
+                <td>{{ $kontak->nama_bank}}</td>
                 <td>
                   <a href="{{ route('kontak.edit', ['id' => $kontak->id]) }}">
                     <button type="button" class="btn btn-sm btn-info">Edit</button>

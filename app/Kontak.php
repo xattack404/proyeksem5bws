@@ -12,7 +12,8 @@ class Kontak extends Model
         'alamat',
         'no_telp',
         'email',
-        'rekening'
+        'rekening',
+        'nama_bank'
     ];
 
     public $timestamps = false;
