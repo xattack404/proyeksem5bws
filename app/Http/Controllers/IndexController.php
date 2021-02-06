@@ -18,11 +18,13 @@ class IndexController extends Controller
         $data = Artikel::orderBy('id', 'desc')->paginate(1);
         return view('frontend.home.index', compact('data'));
     }
+
     public function news()
     {
-        dd($data = Berita::orderBy('id', 'desc')->paginate(1));
+        $data = Berita::orderBy('id', 'desc')->paginate(1);
         return view('frontend.home.news', compact('data'));
     }
+
     public function artikel($seo)
     {
         $data = Artikel::where('seo', $seo)->first();

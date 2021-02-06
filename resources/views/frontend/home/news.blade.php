@@ -17,7 +17,7 @@
                         <p><span>October</span> <span>01</span>,<span>2020</span>
                             <img src="{{ asset('foto/'. $news->gambar) }}" alt="">
                             <p>{{ str_limit($news->isi, $limit = 200, $end = '') }}</p>
-                            <a href="berita.php">baca selanjutnya...</a>
+                            <a href="{{ route('frontend.home.artikel', ['seo' => $artikel->seo]) }}">baca selanjutnya...</a>
                             @empty
                             @endforelse
                     </li>

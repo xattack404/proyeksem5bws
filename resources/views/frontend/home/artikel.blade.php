@@ -2,7 +2,7 @@
 <!-- Navbar End -->
 <!-- Judul -->
 <div class="judul-halaman">
-    <h1>Tentang Al-Djaliel</h1>
+    <h1>Pondok Pesantren Al-Djaliel</h1>
 </div>
 <!-- Judul Akhir-->
 <!-- Container -->
@@ -21,9 +21,7 @@
         <!-- Information Akhir -->
 
         <!-- News -->
-        <div class="news">
-            @include('frontend.home.news')
-        </div>
+
         <!-- Akhir -->
     </div>
 </div>
