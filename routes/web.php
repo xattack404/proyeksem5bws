@@ -90,3 +90,11 @@ Route::post('panel/artikel/create', ['as' => 'artikel.store', 'uses' => 'Artikel
 Route::get('panel/artikel/edit/{id}', ['as' => 'artikel.edit', 'uses' => 'ArtikelController@edit']);
 Route::put('panel/artikel/edit/{id}', ['as' => 'artikel.update', 'uses' => 'ArtikelController@update']);
 Route::get('panel/artikel/delete/{id}', ['as' => 'artikel.delete', 'uses' => 'ArtikelController@delete']);
+
+//Route Menu Profil
+Route::get('panel/profil', ['as' => 'profil.index', 'uses' => 'ProfilController@index']);
+Route::get('panel/profil/create', ['as' => 'profil.create', 'uses' => 'ProfilController@create']);
+Route::post('panel/profil/create', ['as' => 'profil.store', 'uses' => 'ProfilController@store']);
+Route::get('panel/profil/edit/{id}', ['as' => 'profil.edit', 'uses' => 'ProfilController@edit']);
+Route::put('panel/profil/edit/{id}', ['as' => 'profil.update', 'uses' => 'ProfilController@update']);
+Route::get('panel/profil/delete/{id}', ['as' => 'profil.delete', 'uses' => 'ProfilController@delete']);
