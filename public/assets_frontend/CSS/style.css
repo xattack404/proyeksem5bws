@@ -787,6 +787,7 @@ padding-left: 10px;
 position: absolute;
 left: 0;
 cursor: pointer;
+font-size: 13px;
 }
 .container-pagination {
 width: 100%;
