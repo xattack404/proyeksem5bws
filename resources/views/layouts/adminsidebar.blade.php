@@ -37,6 +37,9 @@
       <li class="">
         <a class="nav-link" href="{{ route('artikel.index') }}"><i class="fas fa-newspaper"></i> <span>Artikel</span></a>
       </li>
+      <li class="">
+        <a class="nav-link" href="{{ route('profil.index') }}"><i class="fas fa-newspaper"></i> <span>Profil</span></a>
+      </li>
       </li>
     </ul>
   </aside>
