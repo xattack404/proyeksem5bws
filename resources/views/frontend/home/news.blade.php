@@ -10,18 +10,33 @@
         <table class="tablepaginitation" id="our-table">
             <div id="page-news">
                 <ul id="list">
-
+                    @forelse($data as $news)
                     <li>
-                        @forelse($data as $news)
                         <h1>{{ $news->judul }}</h1>
                         <p><span>October</span> <span>01</span>,<span>2020</span>
                             <img src="{{ asset('foto/'. $news->gambar) }}" alt="">
                             <p>{{ str_limit($news->isi, $limit = 200, $end = '') }}</p>
                             <a href="{{ route('frontend.home.artikel', ['seo' => $artikel->seo]) }}">baca selanjutnya...</a>
-                            @empty
-                            @endforelse
+                            
                     </li>
+                    @empty
+                    @endforelse
+                </ul> 
+                <ul>
+                    <div id="list_index" class="box"></div> 
                 </ul>
+
+                <script type="text/javascript">
+                    window.addEventListener("load", function () {
+                    paginator({
+                    get_rows: function () {
+                    return document.getElementById("list").getElementsByTagName("li");
+                    },
+                    box: document.getElementById("list_index"),
+                    active_class: "color_page"
+                    });
+                    }, false);  
+                </script>
 
 
             </div>

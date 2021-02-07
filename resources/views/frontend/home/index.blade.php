@@ -40,7 +40,7 @@
             <h1>{{ $artikel->judul }}</h1>
             <img class="gambar" src="{{ asset('img_artikel/'. $artikel->gambar) }}" alt="">
             <p> {{ str_limit($artikel->isi, $limit = 800, $end = '') }}</p>
-            <a href="{{ route('frontend.home.artikel', ['seo' => $artikel->seo]) }}">baca selanjutnya...</a>
+            <!-- <a href="{{ route('frontend.home.artikel', ['seo' => $artikel->seo]) }}">baca selanjutnya...</a> -->
         </div>
         @empty
         <div class="information-container">
