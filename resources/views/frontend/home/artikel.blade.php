@@ -2,7 +2,7 @@
 <!-- Navbar End -->
 <!-- Judul -->
 <div class="judul-halaman">
-    <h1>Pondok Pesantren Al-Djaliel</h1>
+    <h1>Al-Djaliel <span>NEWS</span></h1>
 </div>
 <!-- Judul Akhir-->
 <!-- Container -->
